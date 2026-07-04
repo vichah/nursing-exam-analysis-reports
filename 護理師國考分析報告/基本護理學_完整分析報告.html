@@ -1,0 +1,1549 @@
+<title>護理師國考「基本護理學與護理行政」完整分析報告 (111年-115年)</title>
+<style>
+  :root {
+    --primary: #6A1B9A;
+    --secondary: #7B1FA2;
+    --accent: #AB47BC;
+    --light-bg: #F3E5F5;
+    --text: #212121;
+    --text-light: #546E7A;
+    --white: #FFFFFF;
+    --border: #CE93D8;
+    --star: #FFB300;
+    --bar-bg: #EDE7F6;
+    --success: #2E7D32;
+    --warning: #E65100;
+    --danger: #C62828;
+    --shadow: 0 2px 8px rgba(106,27,154,0.10);
+    --shadow-lg: 0 4px 24px rgba(106,27,154,0.13);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Microsoft JhengHei", sans-serif; color: var(--text); background: #F5F7FA; line-height: 1.7; }
+
+  .sidebar {
+    position: fixed; top: 0; left: 0; width: 260px; height: 100vh;
+    background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+    color: var(--white); overflow-y: auto; z-index: 100;
+    padding: 24px 0; box-shadow: 2px 0 16px rgba(0,0,0,0.15);
+  }
+  .sidebar-title {
+    font-size: 15px; font-weight: 700; padding: 0 20px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.15); margin-bottom: 12px; line-height: 1.5;
+  }
+  .sidebar a {
+    display: block; color: rgba(255,255,255,0.8); text-decoration: none;
+    padding: 8px 20px; font-size: 13.5px; transition: all 0.2s;
+    border-left: 3px solid transparent;
+  }
+  .sidebar a:hover, .sidebar a:focus {
+    background: rgba(255,255,255,0.1); color: #fff; border-left-color: var(--accent);
+  }
+  .sidebar .nav-section {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 1px;
+    color: rgba(255,255,255,0.45); padding: 14px 20px 6px; font-weight: 700;
+  }
+
+  .main { margin-left: 260px; padding: 0; }
+
+  .hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, #8E24AA 100%);
+    color: var(--white); padding: 56px 48px 48px; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -60px; right: -60px;
+    width: 300px; height: 300px; border-radius: 50%;
+    background: rgba(171,71,188,0.12);
+  }
+  .hero::after {
+    content: ''; position: absolute; bottom: -80px; left: 30%;
+    width: 400px; height: 400px; border-radius: 50%;
+    background: rgba(171,71,188,0.07);
+  }
+  .hero h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; position: relative; z-index: 1; }
+  .hero .subtitle { font-size: 18px; opacity: 0.85; position: relative; z-index: 1; }
+  .hero .badge-row { margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap; position: relative; z-index: 1; }
+  .hero .badge {
+    display: inline-block; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.25);
+    padding: 6px 16px; border-radius: 20px; font-size: 14px; backdrop-filter: blur(4px);
+  }
+
+  .content { padding: 36px 48px 60px; max-width: 1100px; }
+
+  .section-title {
+    font-size: 24px; font-weight: 800; color: var(--primary);
+    border-left: 5px solid var(--accent); padding-left: 16px;
+    margin: 48px 0 24px; line-height: 1.4;
+  }
+  .section-title:first-child { margin-top: 0; }
+
+  .card {
+    background: var(--white); border-radius: 12px; padding: 28px 32px;
+    box-shadow: var(--shadow); margin-bottom: 28px; border: 1px solid var(--border);
+  }
+  .card h3 {
+    font-size: 18px; color: var(--secondary); margin-bottom: 16px;
+    padding-bottom: 10px; border-bottom: 2px solid var(--light-bg);
+  }
+
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 28px; }
+  .stat-card {
+    background: var(--white); border-radius: 10px; padding: 20px 24px;
+    box-shadow: var(--shadow); border-left: 4px solid var(--accent); text-align: center;
+  }
+  .stat-card .stat-num { font-size: 36px; font-weight: 800; color: var(--primary); }
+  .stat-card .stat-label { font-size: 14px; color: var(--text-light); margin-top: 4px; }
+
+  .bar-chart { margin: 20px 0; }
+  .bar-row { display: flex; align-items: center; margin-bottom: 10px; }
+  .bar-label { width: 180px; font-size: 14px; font-weight: 600; color: var(--text); text-align: right; padding-right: 16px; flex-shrink: 0; }
+  .bar-track { flex: 1; background: var(--bar-bg); border-radius: 8px; height: 30px; position: relative; overflow: hidden; }
+  .bar-fill {
+    height: 100%; border-radius: 8px; display: flex; align-items: center;
+    padding-left: 12px; font-size: 13px; font-weight: 700; color: var(--white);
+    transition: width 0.6s ease; min-width: 40px;
+  }
+  .bar-fill.c1 { background: linear-gradient(90deg, #6A1B9A, #7B1FA2); }
+  .bar-fill.c2 { background: linear-gradient(90deg, #7B1FA2, #8E24AA); }
+  .bar-fill.c3 { background: linear-gradient(90deg, #8E24AA, #9C27B0); }
+  .bar-fill.c4 { background: linear-gradient(90deg, #4A148C, #6A1B9A); }
+  .bar-fill.c5 { background: linear-gradient(90deg, #AD1457, #C2185B); }
+  .bar-fill.c6 { background: linear-gradient(90deg, #4527A0, #5E35B1); }
+  .bar-fill.c7 { background: linear-gradient(90deg, #1565C0, #1976D2); }
+  .bar-fill.c8 { background: linear-gradient(90deg, #00695C, #00897B); }
+  .bar-fill.c9 { background: linear-gradient(90deg, #E65100, #EF6C00); }
+  .bar-fill.c10 { background: linear-gradient(90deg, #558B2F, #689F38); }
+  .bar-fill.c11 { background: linear-gradient(90deg, #BF360C, #D84315); }
+  .bar-fill.c12 { background: linear-gradient(90deg, #37474F, #546E7A); }
+  .bar-extra { width: 60px; font-size: 13px; color: var(--text-light); padding-left: 10px; flex-shrink: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 16px 0; border-radius: 10px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  thead th {
+    background: var(--primary); color: var(--white); padding: 12px 16px;
+    text-align: left; font-weight: 700; font-size: 13.5px; white-space: nowrap;
+  }
+  tbody td { padding: 10px 16px; border-bottom: 1px solid #EDE7F6; }
+  tbody tr:nth-child(even) { background: #F9F5FF; }
+  tbody tr:hover { background: var(--light-bg); }
+  .freq-high { color: var(--danger); font-weight: 700; }
+  .freq-mid { color: var(--warning); font-weight: 600; }
+  .freq-low { color: var(--text-light); }
+  .stars { color: var(--star); letter-spacing: 1px; font-size: 15px; }
+
+  .sys-header {
+    display: flex; align-items: center; gap: 12px;
+    margin: 36px 0 16px; padding: 14px 20px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: var(--white); border-radius: 10px; font-size: 18px; font-weight: 700;
+  }
+  .sys-header .sys-icon { font-size: 26px; }
+  .sys-header .sys-pct { margin-left: auto; font-size: 14px; opacity: 0.85; font-weight: 400; }
+
+  .timeline { position: relative; padding-left: 30px; margin: 20px 0; }
+  .timeline::before {
+    content: ''; position: absolute; left: 12px; top: 0; bottom: 0;
+    width: 3px; background: linear-gradient(var(--primary), var(--accent));
+    border-radius: 2px;
+  }
+  .timeline-item {
+    position: relative; margin-bottom: 20px; padding: 16px 20px;
+    background: var(--white); border-radius: 10px; box-shadow: var(--shadow);
+    border-left: 3px solid var(--accent);
+  }
+  .timeline-item::before {
+    content: ''; position: absolute; left: -24px; top: 20px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--accent); border: 2px solid var(--white);
+  }
+  .timeline-item h4 { font-size: 15px; color: var(--primary); margin-bottom: 6px; }
+  .timeline-item p { font-size: 14px; color: var(--text-light); }
+
+  .plan-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 20px 0; }
+  .plan-card {
+    background: var(--white); border-radius: 12px; padding: 24px;
+    box-shadow: var(--shadow); border-top: 4px solid var(--accent); position: relative;
+  }
+  .plan-card.urgent { border-top-color: var(--danger); }
+  .plan-card.warning { border-top-color: var(--warning); }
+  .plan-card.safe { border-top-color: var(--success); }
+  .plan-card h4 { font-size: 18px; color: var(--primary); margin-bottom: 12px; }
+  .plan-card .plan-days {
+    display: inline-block; padding: 3px 12px; border-radius: 12px;
+    font-size: 12px; font-weight: 700; color: var(--white); margin-bottom: 12px;
+  }
+  .plan-card.safe .plan-days { background: var(--success); }
+  .plan-card .plan-days { background: var(--accent); }
+  .plan-card.warning .plan-days { background: var(--warning); }
+  .plan-card.urgent .plan-days { background: var(--danger); }
+  .plan-card ul { list-style: none; padding: 0; }
+  .plan-card li { padding: 5px 0; font-size: 14px; border-bottom: 1px dashed #EDE7F6; }
+  .plan-card li::before { content: '\25B6'; color: var(--accent); margin-right: 8px; font-size: 10px; }
+
+  .must-know {
+    background: linear-gradient(135deg, #FFF8E1, #FFFDE7);
+    border: 2px solid #FFD54F; border-radius: 12px;
+    padding: 24px 28px; margin: 16px 0;
+  }
+  .must-know h4 { color: #E65100; margin-bottom: 12px; font-size: 16px; }
+  .must-know ul { list-style: none; padding: 0; }
+  .must-know li {
+    padding: 6px 0; font-size: 14px; border-bottom: 1px dashed #FFE082; color: var(--text);
+  }
+  .must-know li::before { content: '\2714'; color: #E65100; margin-right: 8px; font-weight: 700; }
+
+  .two-area { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+  .area-card {
+    background: var(--white); border-radius: 12px; padding: 24px 28px;
+    box-shadow: var(--shadow); border-top: 4px solid var(--accent);
+  }
+  .area-card h4 { font-size: 17px; color: var(--primary); margin-bottom: 12px; }
+  .area-card .area-pct { font-size: 42px; font-weight: 800; color: var(--secondary); }
+  .area-card .area-desc { font-size: 14px; color: var(--text-light); margin-top: 8px; }
+
+  .footer {
+    text-align: center; padding: 32px; color: var(--text-light);
+    font-size: 13px; border-top: 1px solid var(--border); margin-top: 40px;
+  }
+
+  @media print {
+    .sidebar { display: none; }
+    .main { margin-left: 0; }
+    .hero { padding: 24px; }
+    .content { padding: 20px; }
+    .card, .stat-card, .plan-card, .timeline-item { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+    body { background: #fff; }
+  }
+  @media (max-width: 900px) {
+    .sidebar { display: none; }
+    .main { margin-left: 0; }
+    .hero { padding: 32px 24px; }
+    .hero h1 { font-size: 24px; }
+    .content { padding: 20px; }
+    .bar-label { width: 120px; font-size: 12px; }
+    .two-area { grid-template-columns: 1fr; }
+  }
+</style>
+
+<!-- Sidebar Navigation -->
+<nav class="sidebar">
+  <a href="index.html" style="display:block;padding:10px 20px 12px;font-size:13px;color:rgba(255,255,255,0.7);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.12);margin-bottom:8px;transition:all 0.2s;" onmouseover="this.style.color='#fff';this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.color='rgba(255,255,255,0.7)';this.style.background='transparent'">&#9664; 返回首頁</a>
+  <div class="sidebar-title">基本護理學與護理行政<br>完整分析報告</div>
+  <div class="nav-section">總覽</div>
+  <a href="#overview">考試概覽</a>
+  <a href="#two-areas">兩大領域配比</a>
+  <a href="#distribution">主題配比分析</a>
+  <div class="nav-section">基本護理學</div>
+  <a href="#med">給藥</a>
+  <a href="#fluid">體液/輸液/輸血</a>
+  <a href="#process">護理過程</a>
+  <a href="#infection">感染控制/無菌</a>
+  <a href="#vitals">生命徵象</a>
+  <a href="#elim">排泄/灌腸/導尿</a>
+  <a href="#thermal">冷熱療法</a>
+  <a href="#nutrition">營養/管灌</a>
+  <a href="#mobility">活動與擺位</a>
+  <a href="#comm">溝通技巧</a>
+  <a href="#wound">傷口/繃帶/檢體</a>
+  <a href="#eol">臨終護理</a>
+  <div class="nav-section">護理行政</div>
+  <a href="#mgmt-theory">管理理論</a>
+  <a href="#staffing">人力/排班/模式</a>
+  <a href="#quality">品質管理/病安</a>
+  <a href="#leadership">領導/組織/績效</a>
+  <a href="#law">法規/成本/進階</a>
+  <div class="nav-section">策略</div>
+  <a href="#trends">歷年趨勢變化</a>
+  <a href="#study">考前衝刺建議</a>
+  <a href="#must-know">必背清單</a>
+</nav>
+
+<!-- Main Content -->
+<div class="main">
+  <div class="hero">
+    <h1>護理師國考「基本護理學與護理行政」完整分析報告</h1>
+    <div class="subtitle">111年第一次 ~ 115年第一次 共12次考試全面解析</div>
+    <div class="badge-row">
+      <span class="badge">12 次考試</span>
+      <span class="badge">720 題</span>
+      <span class="badge">兩大領域</span>
+      <span class="badge">111年 - 115年</span>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- 考試概覽 -->
+    <h2 class="section-title" id="overview">考試概覽</h2>
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-num">12</div>
+        <div class="stat-label">考試次數</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">720</div>
+        <div class="stat-label">總題數</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">2</div>
+        <div class="stat-label">大領域</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">100</div>
+        <div class="stat-label">每次滿分</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>考試場次與配分</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>考試場次</th><th>題數</th><th>每題配分</th><th>題型變化</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>111年第一次</td><td>80題</td><td>1.25分</td><td>舊制</td></tr>
+            <tr><td>111年第二次</td><td>80題</td><td>1.25分</td><td>舊制</td></tr>
+            <tr><td>112年第一次</td><td>80題</td><td>1.25分</td><td>舊制</td></tr>
+            <tr><td>112年第二次</td><td>80題</td><td>1.25分</td><td>舊制（最後一次80題）</td></tr>
+            <tr><td>112年第三次</td><td>50題</td><td>2分</td><td>新制開始</td></tr>
+            <tr><td>113年第一次</td><td>50題</td><td>2分</td><td>新制</td></tr>
+            <tr><td>113年第二次</td><td>50題</td><td>2分</td><td>新制</td></tr>
+            <tr><td>113年第三次</td><td>50題</td><td>2分</td><td>新制</td></tr>
+            <tr><td>114年第一次</td><td>50題</td><td>2分</td><td>新制</td></tr>
+            <tr><td>114年第二次</td><td>50題</td><td>2分</td><td>新制</td></tr>
+            <tr><td>114年第三次</td><td>50題</td><td>2分</td><td>新制</td></tr>
+            <tr><td>115年第一次</td><td>50題</td><td>2分</td><td>新制</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:14px; color:var(--text-light); margin-top:12px;">
+        112年第三次起改制，題數由80題減為50題，每題配分由1.25分提高至2分，每題比重加倍，答錯代價更高。
+      </p>
+    </div>
+
+    <!-- 兩大領域 -->
+    <h2 class="section-title" id="two-areas">兩大領域配比</h2>
+    <div class="two-area">
+      <div class="area-card">
+        <h4>基本護理學</h4>
+        <div class="area-pct">~60%</div>
+        <div class="area-desc">涵蓋護理原理與護理技術，包括：感染控制、護理過程、給藥、輸液輸血、冷熱療法、排泄照護、營養管灌、生命徵象、活動擺位、傷口護理、臨終照護、溝通技巧等。</div>
+      </div>
+      <div class="area-card" style="border-top-color: #8E24AA;">
+        <h4>護理行政</h4>
+        <div class="area-pct">~40%</div>
+        <div class="area-desc">涵蓋管理理論、領導理論、組織結構、品質管理、人力排班、績效考核、護理法規、成本預算、病人安全、臨床進階制度、護理照護模式等。</div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>領域配比說明</h3>
+      <p style="font-size:14px; line-height:1.8;">
+        本科目合併「基本護理學（護理原理、護理技術）」與「護理行政」兩大領域，在每次考試中大約維持 6:4 的比例分配。
+        80題制時期約 48 題基護 + 32 題行政；50題制時期約 30 題基護 + 20 題行政。
+        兩領域性質截然不同：基本護理學偏重技術操作與臨床情境判斷，護理行政偏重理論應用與管理計算。
+        備考策略應兼顧兩者，不可偏廢。
+      </p>
+    </div>
+
+    <!-- 主題配比分析 -->
+    <h2 class="section-title" id="distribution">主題配比分析</h2>
+    <div class="card">
+      <h3>基本護理學 主要主題出題比重（12次考試估算）</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <div class="bar-label">給藥</div>
+          <div class="bar-track"><div class="bar-fill c1" style="width:85%;">~60題 8.3%</div></div>
+          <div class="bar-extra">每次必考</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">體液/輸液/輸血</div>
+          <div class="bar-track"><div class="bar-fill c2" style="width:70%;">~50題 6.9%</div></div>
+          <div class="bar-extra">每次必考</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">護理過程</div>
+          <div class="bar-track"><div class="bar-fill c3" style="width:65%;">~45題 6.3%</div></div>
+          <div class="bar-extra">每次必考</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">感染控制/無菌</div>
+          <div class="bar-track"><div class="bar-fill c4" style="width:58%;">~40題 5.6%</div></div>
+          <div class="bar-extra">每次必考</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">生命徵象</div>
+          <div class="bar-track"><div class="bar-fill c5" style="width:58%;">~40題 5.6%</div></div>
+          <div class="bar-extra">每次必考</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">排泄/灌腸/導尿</div>
+          <div class="bar-track"><div class="bar-fill c6" style="width:55%;">~38題 5.3%</div></div>
+          <div class="bar-extra">每次必考</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">冷熱療法</div>
+          <div class="bar-track"><div class="bar-fill c7" style="width:50%;">~35題 4.9%</div></div>
+          <div class="bar-extra">每次必考</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">營養/管灌</div>
+          <div class="bar-track"><div class="bar-fill c8" style="width:50%;">~35題 4.9%</div></div>
+          <div class="bar-extra">每次必考</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">活動與擺位</div>
+          <div class="bar-track"><div class="bar-fill c9" style="width:43%;">~30題 4.2%</div></div>
+          <div class="bar-extra">每次必考</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">溝通技巧</div>
+          <div class="bar-track"><div class="bar-fill c10" style="width:36%;">~25題 3.5%</div></div>
+          <div class="bar-extra">每次必考</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">傷口/繃帶</div>
+          <div class="bar-track"><div class="bar-fill c11" style="width:29%;">~20題 2.8%</div></div>
+          <div class="bar-extra">高頻</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">臨終護理</div>
+          <div class="bar-track"><div class="bar-fill c12" style="width:26%;">~18題 2.5%</div></div>
+          <div class="bar-extra">每次必考</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>護理行政 主要主題出題比重（12次考試估算）</h3>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <div class="bar-label">管理理論</div>
+          <div class="bar-track"><div class="bar-fill c1" style="width:80%;">~45題 6.3%</div></div>
+          <div class="bar-extra">每次必考</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">人力/排班</div>
+          <div class="bar-track"><div class="bar-fill c2" style="width:70%;">~40題 5.6%</div></div>
+          <div class="bar-extra">每次必考</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">品質管理/病安</div>
+          <div class="bar-track"><div class="bar-fill c3" style="width:65%;">~38題 5.3%</div></div>
+          <div class="bar-extra">每次必考</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">領導理論</div>
+          <div class="bar-track"><div class="bar-fill c4" style="width:53%;">~30題 4.2%</div></div>
+          <div class="bar-extra">每次必考</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">護理模式</div>
+          <div class="bar-track"><div class="bar-fill c5" style="width:40%;">~22題 3.1%</div></div>
+          <div class="bar-extra">每次必考</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">護理法規</div>
+          <div class="bar-track"><div class="bar-fill c6" style="width:40%;">~22題 3.1%</div></div>
+          <div class="bar-extra">每次必考</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">績效考核</div>
+          <div class="bar-track"><div class="bar-fill c7" style="width:36%;">~20題 2.8%</div></div>
+          <div class="bar-extra">每次必考</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">成本/預算</div>
+          <div class="bar-track"><div class="bar-fill c8" style="width:32%;">~18題 2.5%</div></div>
+          <div class="bar-extra">高頻</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">組織結構</div>
+          <div class="bar-track"><div class="bar-fill c9" style="width:32%;">~18題 2.5%</div></div>
+          <div class="bar-extra">高頻</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">臨床進階</div>
+          <div class="bar-track"><div class="bar-fill c10" style="width:27%;">~15題 2.1%</div></div>
+          <div class="bar-extra">高頻</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">衝突管理</div>
+          <div class="bar-track"><div class="bar-fill c11" style="width:22%;">~12題 1.7%</div></div>
+          <div class="bar-extra">中頻</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">護理資訊</div>
+          <div class="bar-track"><div class="bar-fill c12" style="width:18%;">~10題 1.4%</div></div>
+          <div class="bar-extra">中頻</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================= 基本護理學 各主題詳析 ========================= -->
+
+    <!-- 給藥 -->
+    <h2 class="section-title" id="med">給藥</h2>
+    <div class="sys-header">
+      <span class="sys-icon">&#x1F48A;</span> 給藥（Medication Administration）
+      <span class="sys-pct">佔比約 8.3% ｜ 每次必考 3-5 題</span>
+    </div>
+    <div class="card">
+      <h3>出題重點分析</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>主題</th><th>出題頻率</th><th>重要度</th><th>常見考點</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>給藥途徑與醫囑縮寫</td>
+              <td class="freq-high">每次必考</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>PO/SL/SC/IM/IV 途徑辨識；QD/BID/TID/QID/PRN/QOD 頻率；A.U./A.S./A.D. 眼耳用藥縮寫</td>
+            </tr>
+            <tr>
+              <td>給藥五對/三讀五對</td>
+              <td class="freq-high">每次必考</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>病人對、藥物對、劑量對、途徑對、時間對；三讀時機（取藥、倒藥、歸位）</td>
+            </tr>
+            <tr>
+              <td>藥物劑量計算</td>
+              <td class="freq-high">每次必考</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>劑量換算（mg/mL計算抽取量）、點滴速率計算（gtt/min, mL/hr）、熱量計算</td>
+            </tr>
+            <tr>
+              <td>注射技術</td>
+              <td class="freq-high">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;</td>
+              <td>IM注射部位（腹臀肌/三角肌/股外側肌）、SC注射角度（45-90度）、Z-track技術、胰島素注射</td>
+            </tr>
+            <tr>
+              <td>特殊給藥方式</td>
+              <td class="freq-mid">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;</td>
+              <td>舌下含服（NTG）、肛門栓劑（直腸黏膜吸收）、吸入劑（MDI使用後漱口防念珠菌）、管灌給藥（不可磨碎膠囊/緩釋劑型）</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="must-know">
+      <h4>給藥必背要點</h4>
+      <ul>
+        <li>NTG 舌下含服：胸痛時使用，每5分鐘可重複一次，最多3次</li>
+        <li>Gentamycin 40mg/mL，需100mg → 抽取2.5mL</li>
+        <li>持續性藥效膠囊（如 tacrolimus）整顆吞服，不可磨碎/剝半/咬碎</li>
+        <li>Corticosteroids 乾粉吸入劑使用後需漱口→避免口腔念珠菌感染</li>
+        <li>肛門栓劑主要經直腸黏膜吸收產生藥效</li>
+        <li>G5W 1000mL 提供 50g 葡萄糖 = 200 Kcal；G5W 1000mL + G5S 500mL = 75g = 300 Kcal</li>
+        <li>點滴速率計算：mL/hr = 總量(mL) / 總時數(hr)；170mL/day ÷ 24hr ≈ 7mL/hr</li>
+      </ul>
+    </div>
+
+    <!-- 體液/輸液/輸血 -->
+    <h2 class="section-title" id="fluid">體液/輸液/輸血</h2>
+    <div class="sys-header">
+      <span class="sys-icon">&#x1FA78;</span> 體液電解質 / 輸液 / 輸血
+      <span class="sys-pct">佔比約 6.9% ｜ 每次必考 2-4 題</span>
+    </div>
+    <div class="card">
+      <h3>出題重點分析</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>主題</th><th>出題頻率</th><th>重要度</th><th>常見考點</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>靜脈輸液併發症</td>
+              <td class="freq-high">每次必考</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>血栓靜脈炎（移除原針、抬高患肢）、滲漏、空氣栓塞、循環負荷過重</td>
+            </tr>
+            <tr>
+              <td>輸血注意事項</td>
+              <td class="freq-high">每次必考</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>最初15-30分鐘慢速（20-40 gtt/min）；每單位2小時內輸完；加壓器壓力不超過300mmHg；加溫器38-40℃；血品領取後不放護理站冰箱</td>
+            </tr>
+            <tr>
+              <td>體液電解質平衡</td>
+              <td class="freq-mid">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;</td>
+              <td>低血鉀/高血鉀症狀與處置、脫水評估、水腫評估、電解質補充</td>
+            </tr>
+            <tr>
+              <td>酸鹼平衡</td>
+              <td class="freq-mid">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;</td>
+              <td>代謝性酸中毒/鹼中毒、呼吸性酸中毒/鹼中毒、ABG判讀</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="must-know">
+      <h4>輸液/輸血必背要點</h4>
+      <ul>
+        <li>血栓靜脈炎處置：立即移除原注射針→抬高注射部位（非按摩、非濕冷敷）</li>
+        <li>輸血前15-30分鐘滴速 20-40 gtt/min，無反應後按醫囑調整</li>
+        <li>輸血加壓器壓力 ≤ 300 mmHg（非400）</li>
+        <li>輸血加溫器溫度 38-40℃</li>
+        <li>血品離開血庫超過30分鐘不可退回；血漿收到後儘速輸完</li>
+      </ul>
+    </div>
+
+    <!-- 護理過程 -->
+    <h2 class="section-title" id="process">護理過程</h2>
+    <div class="sys-header">
+      <span class="sys-icon">&#x1F4CB;</span> 護理過程（Nursing Process）
+      <span class="sys-pct">佔比約 6.3% ｜ 每次必考 2-4 題</span>
+    </div>
+    <div class="card">
+      <h3>出題重點分析</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>主題</th><th>出題頻率</th><th>重要度</th><th>常見考點</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>護理評估（資料收集）</td>
+              <td class="freq-high">每次必考</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>主觀資料vs客觀資料辨別（主訴=主觀；觸診/聽診/叩診=客觀）；初級資料來源（病人本身）vs次級資料來源</td>
+            </tr>
+            <tr>
+              <td>護理診斷與問題排序</td>
+              <td class="freq-high">每次必考</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>依Maslow需求層次排優先順序：呼吸困難 > 疼痛 > 睡眠紊亂 > 心像紊亂；生理需求最優先</td>
+            </tr>
+            <tr>
+              <td>護理目標設定</td>
+              <td class="freq-high">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;</td>
+              <td>目標應以病人為中心（非護理師經驗）、符合病人能力、可評量、有時間性</td>
+            </tr>
+            <tr>
+              <td>護理計畫與評值</td>
+              <td class="freq-mid">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;</td>
+              <td>護理過程每一步驟都可進行評值；計畫階段不包括資料收集；以病人為中心</td>
+            </tr>
+            <tr>
+              <td>護理紀錄</td>
+              <td class="freq-mid">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;</td>
+              <td>紀錄須標明「病人主述」；須正確完整可作法律文件；無法緩解之症狀需報告醫師</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 感染控制 -->
+    <h2 class="section-title" id="infection">感染控制 / 無菌技術</h2>
+    <div class="sys-header">
+      <span class="sys-icon">&#x1F9EC;</span> 感染控制與無菌技術
+      <span class="sys-pct">佔比約 5.6% ｜ 每次必考 2-3 題</span>
+    </div>
+    <div class="card">
+      <h3>出題重點分析</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>主題</th><th>出題頻率</th><th>重要度</th><th>常見考點</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>內外科無菌技術區別</td>
+              <td class="freq-high">每次必考</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>內科無菌=清潔技術（洗手指尖朝下、低於肘部）；外科無菌=滅菌技術（應用於侵入性治療如導尿、術後傷口換藥）</td>
+            </tr>
+            <tr>
+              <td>隔離措施</td>
+              <td class="freq-high">每次必考</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>肺結核→空氣傳染防護；疥瘡→接觸傳染防護；骨髓移植→保護性隔離；化療病人→保護性隔離</td>
+            </tr>
+            <tr>
+              <td>手部衛生</td>
+              <td class="freq-high">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;</td>
+              <td>戴手套不能取代洗手；沾染血液/體液後須用肥皂水洗手（非酒精乾洗手）；指甲尖端 ≤ 0.5cm</td>
+            </tr>
+            <tr>
+              <td>消毒劑/終期消毒</td>
+              <td class="freq-mid">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;</td>
+              <td>75%酒精消毒效果優於95%；3%雙氧水可去除血漬痂皮；終期消毒：有分泌物血跡以漂白水清洗；紫外線燈照射</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="must-know">
+      <h4>感染控制必背要點</h4>
+      <ul>
+        <li>外科無菌技術應用於：導尿管放置、術後傷口換藥等侵入性治療</li>
+        <li>肺結核 = 空氣傳染防護（N95口罩）；疥瘡 = 接觸傳染防護</li>
+        <li>沾染血液/體液 → 必須用肥皂水洗手，不可僅用酒精乾洗手</li>
+        <li>終期消毒：血跡/分泌物以漂白水清洗擦拭；布單先清洗再消毒</li>
+        <li>傳染病大流行 → 隔離病房宜採功能性護理模式</li>
+      </ul>
+    </div>
+
+    <!-- 生命徵象 -->
+    <h2 class="section-title" id="vitals">生命徵象</h2>
+    <div class="sys-header">
+      <span class="sys-icon">&#x1FA7A;</span> 生命徵象（Vital Signs）
+      <span class="sys-pct">佔比約 5.6% ｜ 每次必考 2-4 題</span>
+    </div>
+    <div class="card">
+      <h3>出題重點分析</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>主題</th><th>出題頻率</th><th>重要度</th><th>常見考點</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>體溫測量與發燒型態</td>
+              <td class="freq-high">每次必考</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>間歇熱（敗血症）、弛張熱（波動＞2℃）、稽留熱（波動＜1℃，大葉性肺炎）、回歸熱（傷寒）；基礎體溫排卵後上升0.3-0.6℃（黃體素）</td>
+            </tr>
+            <tr>
+              <td>血壓測量</td>
+              <td class="freq-high">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;</td>
+              <td>膝膕動脈血壓測量（壓脈帶大腿中段前側）；膝膕動脈收縮壓 > 肱動脈；高壓脈vs低壓脈</td>
+            </tr>
+            <tr>
+              <td>脈搏與呼吸</td>
+              <td class="freq-mid">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;</td>
+              <td>出血性休克→低壓脈；動脈硬化→高壓脈；喟嘆式呼吸→情緒反應；測量呼吸不可先告知病人</td>
+            </tr>
+            <tr>
+              <td>影響體溫因素</td>
+              <td class="freq-mid">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;</td>
+              <td>新陳代謝增加→體溫升高；老人皮下脂肪薄→體溫較低；晝夜節律：傍晚4-8時最高；排卵後黃體素→基礎體溫上升</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="must-know">
+      <h4>生命徵象必背要點</h4>
+      <ul>
+        <li>間歇熱：體溫反覆升高又降至正常以下 → 敗血症</li>
+        <li>弛張熱：24hr波動 ＞ 2℃ → 術後傷口感染（非傷寒）</li>
+        <li>稽留熱：24hr波動 ＜ 1℃ → 大葉性肺炎</li>
+        <li>回歸熱：高熱期與退熱期交替 → 肺結核（非傷寒）</li>
+        <li>出血性休克 → 低壓脈（非高壓脈）</li>
+        <li>排卵後基礎體溫平均上升 0.3-0.6℃</li>
+        <li>雙臂骨折上石膏 → 改測膝膕動脈血壓，壓脈帶置於大腿中段前側</li>
+      </ul>
+    </div>
+
+    <!-- 排泄/灌腸/導尿 -->
+    <h2 class="section-title" id="elim">排泄 / 灌腸 / 導尿</h2>
+    <div class="sys-header">
+      <span class="sys-icon">&#x1F6BD;</span> 排泄照護（灌腸 / 導尿 / 排便）
+      <span class="sys-pct">佔比約 5.3% ｜ 每次必考 2-3 題</span>
+    </div>
+    <div class="card">
+      <h3>出題重點分析</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>主題</th><th>出題頻率</th><th>重要度</th><th>常見考點</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>存留導尿</td>
+              <td class="freq-high">每次必考</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>女性導尿管潤滑5-7cm；水球注入5-10mL無菌蒸餾水；先鋪洞巾再消毒；導尿管大小：男性14-16Fr，女性12-14Fr</td>
+            </tr>
+            <tr>
+              <td>排尿評估與誘尿</td>
+              <td class="freq-high">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;</td>
+              <td>術後6hr未解尿需協助誘尿；聽流水聲、溫水坐浴、熱水袋敷膀胱（非足部熱敷）；膀胱容量600-800mL；壓力性尿失禁→凱格爾運動</td>
+            </tr>
+            <tr>
+              <td>灌腸</td>
+              <td class="freq-mid">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;</td>
+              <td>灌腸液溫度40.5-43℃；甘油球灌腸；大量灌腸體位（左側臥）；間歇導尿不適用於尿失禁</td>
+            </tr>
+            <tr>
+              <td>腹瀉/便秘護理</td>
+              <td class="freq-mid">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;</td>
+              <td>腹瀉→補充鈉鉀離子與水分；便秘→腹部由右至左順結腸按摩；促進排便→早餐後坐馬桶</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 冷熱療法 -->
+    <h2 class="section-title" id="thermal">冷熱療法</h2>
+    <div class="sys-header">
+      <span class="sys-icon">&#x1F321;</span> 冷熱療法（Cold/Heat Therapy）
+      <span class="sys-pct">佔比約 4.9% ｜ 每次必考 2-3 題</span>
+    </div>
+    <div class="card">
+      <h3>出題重點分析</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>主題</th><th>出題頻率</th><th>重要度</th><th>常見考點</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>用熱生理效應</td>
+              <td class="freq-high">每次必考</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>降低血液黏稠度、增加微血管通透性、增加組織代謝率、促進白血球活動；扭傷48hr後熱敷→促進血液循環</td>
+            </tr>
+            <tr>
+              <td>冷熱共同效果</td>
+              <td class="freq-high">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;</td>
+              <td>冷與熱皆可減緩疼痛（共同效果）；冷：減緩炎症反應/充血腫脹；熱：減緩關節僵硬</td>
+            </tr>
+            <tr>
+              <td>溫水坐浴</td>
+              <td class="freq-high">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;</td>
+              <td>會陰傷口41-43℃溫水；主要目的：促進傷口血液循環；浸泡約20分鐘（過長→低血壓）；頭暈→身體前傾、頭低於心臟</td>
+            </tr>
+            <tr>
+              <td>耐受性因素</td>
+              <td class="freq-mid">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;</td>
+              <td>面積愈大→耐受力愈低；時間愈長→耐受力愈低；老人小孩耐受力較低（非較高）；神經感覺不良→易造成傷害</td>
+            </tr>
+            <tr>
+              <td>烤燈使用</td>
+              <td class="freq-low">中頻</td>
+              <td class="stars">&#9733;&#9733;</td>
+              <td>屬於輻射熱傳導（非對流）；25瓦距皮膚14-18吋；使用前清潔皮膚但不塗凡士林</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="must-know">
+      <h4>冷熱療法必背要點</h4>
+      <ul>
+        <li>用熱效應：降低血液黏稠度、增加微血管通透性、增加組織代謝（非減少）</li>
+        <li>冷與熱的共同效果 = 減緩疼痛</li>
+        <li>扭傷處理：48小時內冰敷 → 48小時後熱敷促進血液循環</li>
+        <li>坐浴後頭暈/心跳加快/蒼白 = 姿勢性低血壓 → 身體前傾、頭低於心臟</li>
+        <li>暴露面積大/時間長 → 耐受力降低；老人小孩耐受力較低</li>
+      </ul>
+    </div>
+
+    <!-- 營養/管灌 -->
+    <h2 class="section-title" id="nutrition">營養 / 管灌</h2>
+    <div class="sys-header">
+      <span class="sys-icon">&#x1F37D;</span> 營養評估與管灌餵食
+      <span class="sys-pct">佔比約 4.9% ｜ 每次必考 2-3 題</span>
+    </div>
+    <div class="card">
+      <h3>出題重點分析</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>主題</th><th>出題頻率</th><th>重要度</th><th>常見考點</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>鼻胃管灌食</td>
+              <td class="freq-high">每次必考</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>矽膠材質7-10天更換；打入空氣確認位置後需抽出空氣；長期禁食後宜採連續性灌食；拔管時高坐臥、發「阿」聲吐氣；每日旋轉管路約45度</td>
+            </tr>
+            <tr>
+              <td>飲食種類</td>
+              <td class="freq-high">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;</td>
+              <td>清流質（大腸鏡前）：蜂蜜水、去油清湯、無渣果汁（非含渣、非排骨湯、非牛奶、非豆漿）；高蛋白飲食：50kg × 1.5-2g = 75-100g</td>
+            </tr>
+            <tr>
+              <td>營養評估指標</td>
+              <td class="freq-mid">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;</td>
+              <td>血清白蛋白反映過去21天蛋白質代謝；運鐵蛋白在肝臟製造（非腎臟）；BMI計算：55/(1.6)²=21.5→正常範圍</td>
+            </tr>
+            <tr>
+              <td>六大營養素</td>
+              <td class="freq-mid">中頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;</td>
+              <td>脂肪氧化需醣類參與，否則產生過多酮體→酮酸中毒；蛋白質由胺基酸組成，人體無法自行合成者=必需胺基酸</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="must-know">
+      <h4>營養/管灌必背要點</h4>
+      <ul>
+        <li>清流質飲食：蜂蜜水、去油清湯、無渣米湯（排除：牛奶、含渣果汁、排骨湯、豆漿）</li>
+        <li>運鐵蛋白在「肝臟」製造（非腎臟）→慢性營養不良評估指標</li>
+        <li>血清白蛋白→反映過去21天體內蛋白質代謝狀況</li>
+        <li>鼻胃管矽膠材質 → 每7-10天更換一次</li>
+        <li>安寧病人自拔鼻胃管→護理計畫：跟病人共同討論可行方法（非視為不遵從）</li>
+        <li>睡眠中促進蛋白質合成與組織修復 → NREM第四期</li>
+      </ul>
+    </div>
+
+    <!-- 活動與擺位 -->
+    <h2 class="section-title" id="mobility">活動與擺位</h2>
+    <div class="sys-header">
+      <span class="sys-icon">&#x1F3CB;</span> 活動、擺位與身體力學
+      <span class="sys-pct">佔比約 4.2% ｜ 每次必考 2-3 題</span>
+    </div>
+    <div class="card">
+      <h3>出題重點分析</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>主題</th><th>出題頻率</th><th>重要度</th><th>常見考點</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>翻身擺位原則</td>
+              <td class="freq-high">每次必考</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>保持頭頸脊椎一直線；肢體勿重疊；身體凹陷處勿懸空（需支托）；側臥加強肩部髖部皮膚護理；移動時不用手抓握肢體</td>
+            </tr>
+            <tr>
+              <td>關節運動類型</td>
+              <td class="freq-high">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;</td>
+              <td>肌力分級：輕微收縮但關節無法活動→被動運動；等長運動（石膏內）：靜態肌肉收縮，預防萎縮；髖關節運動：外展/內旋/迴轉（無旋前pronation）</td>
+            </tr>
+            <tr>
+              <td>搬運身體力學</td>
+              <td class="freq-mid">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;</td>
+              <td>雙腳分開站立、膝髖微彎；面對移動方向；用腿部肌肉（非腰背）；重心靠近病人（非遠離）</td>
+            </tr>
+            <tr>
+              <td>壓力性損傷預防</td>
+              <td class="freq-mid">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;</td>
+              <td>不可使用氣墊圈（增加壓力）；不可按摩壓傷部位；不可使用烤燈；鼓勵主動運動促進血液循環</td>
+            </tr>
+            <tr>
+              <td>穿脫衣服</td>
+              <td class="freq-low">中頻</td>
+              <td class="stars">&#9733;&#9733;</td>
+              <td>有點滴/受傷側：脫衣先脫健側、穿衣先穿患側</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 溝通技巧 -->
+    <h2 class="section-title" id="comm">溝通技巧</h2>
+    <div class="sys-header">
+      <span class="sys-icon">&#x1F4AC;</span> 溝通技巧與護病關係
+      <span class="sys-pct">佔比約 3.5% ｜ 每次必考 1-2 題</span>
+    </div>
+    <div class="card">
+      <h3>出題重點分析</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>主題</th><th>出題頻率</th><th>重要度</th><th>常見考點</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Berlo溝通模式</td>
+              <td class="freq-high">每次必考</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>SMCR模式：發訊者→訊息→管道→收訊者；語言/非語言訊息辨別；病人表情=非語言訊息；護理師表情=收訊者回饋</td>
+            </tr>
+            <tr>
+              <td>治療性溝通</td>
+              <td class="freq-high">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;</td>
+              <td>開放式問句（「可以告訴我你的擔心嗎？」）；避免保證（「一定會好」）；避免替病人決定（「如果我是你」）；個人距離45-120cm</td>
+            </tr>
+            <tr>
+              <td>倫理原則</td>
+              <td class="freq-mid">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;</td>
+              <td>不傷害原則（昏迷病人家屬要求灌食草藥→拒絕）；自主原則；行善原則；公平原則</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 傷口/繃帶/檢體 -->
+    <h2 class="section-title" id="wound">傷口護理 / 繃帶 / 檢體收集</h2>
+    <div class="sys-header">
+      <span class="sys-icon">&#x1FA79;</span> 傷口護理、繃帶包紮、檢體收集
+      <span class="sys-pct">佔比約 5% ｜ 每次 2-3 題</span>
+    </div>
+    <div class="card">
+      <h3>出題重點分析</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>主題</th><th>出題頻率</th><th>重要度</th><th>常見考點</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>繃帶包紮原則</td>
+              <td class="freq-high">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;</td>
+              <td>目的：加壓止血、固定傷口、保暖（非增加關節活動度）；由遠心端→近心端；骨突處放紗布棉墊；包紮前先抬高肢體（非放低）</td>
+            </tr>
+            <tr>
+              <td>痰液檢體收集</td>
+              <td class="freq-high">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;</td>
+              <td>晨起先刷牙再蒐集第一口痰；氣切病人可抽痰方式蒐集；痰液顏色：鐵鏽色→肺炎鏈球菌、粉紅泡沫→肺水腫、深綠色→銅綠假單胞菌（非肺栓塞）</td>
+            </tr>
+            <tr>
+              <td>血液/糞便檢體</td>
+              <td class="freq-mid">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;</td>
+              <td>血液標本沿管壁45度注入；阿米巴痢疾糞便→保持近體溫、30分鐘內送檢；血液培養不須禁食</td>
+            </tr>
+            <tr>
+              <td>出院計畫</td>
+              <td class="freq-mid">中頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;</td>
+              <td>入院即開始規劃（非出院當天）；以病人為中心；多專業團隊共同擬訂</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 臨終護理 -->
+    <h2 class="section-title" id="eol">臨終護理</h2>
+    <div class="sys-header">
+      <span class="sys-icon">&#x1F54A;</span> 臨終護理 / 遺體護理 / 哀傷輔導
+      <span class="sys-pct">佔比約 2.5% ｜ 每次必考 1-2 題</span>
+    </div>
+    <div class="card">
+      <h3>出題重點分析</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>主題</th><th>出題頻率</th><th>重要度</th><th>常見考點</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Kubler-Ross五階段</td>
+              <td class="freq-high">每次必考</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>否認→憤怒→討價還價→憂鬱→接受；不一定按順序進行；可能只停留在否認期直到死亡；也適用於家屬哀傷反應</td>
+            </tr>
+            <tr>
+              <td>遺體護理</td>
+              <td class="freq-mid">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;</td>
+              <td>有假牙者須在屍僵前裝上（非屍僵後）；有鼻胃管先引流後移除；遺體取仰臥位</td>
+            </tr>
+            <tr>
+              <td>哀傷支持</td>
+              <td class="freq-mid">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;</td>
+              <td>家庭關係動態評估有助辨識需哀傷支持者；家屬在病人尚在世時即開始哀傷歷程（非逝世後才開始）；鼓勵家屬探視與互表感受</td>
+            </tr>
+            <tr>
+              <td>安寧緩和療護</td>
+              <td class="freq-mid">中頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;</td>
+              <td>食道癌末期→提供高熱量流質少量多餐（尊重病人意願）；浪漫主義/存在主義/苦行僧主義護理理念辨別</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ========================= 護理行政 各主題詳析 ========================= -->
+
+    <!-- 管理理論 -->
+    <h2 class="section-title" id="mgmt-theory">管理理論</h2>
+    <div class="sys-header">
+      <span class="sys-icon">&#x1F4DA;</span> 管理理論
+      <span class="sys-pct">佔比約 6.3% ｜ 每次必考 2-3 題</span>
+    </div>
+    <div class="card">
+      <h3>出題重點分析</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>主題</th><th>出題頻率</th><th>重要度</th><th>常見考點</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>傳統管理理論</td>
+              <td class="freq-high">每次必考</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>Taylor科學管理（時間動作研究、工作標準化）；Fayol管理程序學派（14項原則、PODC）；Weber官僚組織</td>
+            </tr>
+            <tr>
+              <td>修正/行為科學理論</td>
+              <td class="freq-high">每次必考</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>McGregor X理論（消極）/ Y理論（積極）；Ouchi Z理論（日本式/團隊共識）；Mayo霍桑實驗；Maslow需求層次</td>
+            </tr>
+            <tr>
+              <td>目標管理(MBO)</td>
+              <td class="freq-high">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;</td>
+              <td>Peter Drucker提出→屬參與式管理；促進部屬自我成長、提高工作士氣（非落實集權）</td>
+            </tr>
+            <tr>
+              <td>管理科學學派</td>
+              <td class="freq-mid">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;</td>
+              <td>運用數學計量處理問題；Deming是品質管理代表（非管理程序學派）</td>
+            </tr>
+            <tr>
+              <td>激勵理論</td>
+              <td class="freq-mid">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;</td>
+              <td>內容理論（Maslow/Herzberg）：尋找影響行為的需求；過程理論（公平/期望）：解釋行為如何被激發；增強理論：行為根據後果修正</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="must-know">
+      <h4>管理理論必背要點</h4>
+      <ul>
+        <li>Taylor 科學管理 → 工作標準化、時間動作研究、論件計酬</li>
+        <li>Fayol 管理程序學派 → 規劃/組織/指揮/控制(PODC)、14項管理原則</li>
+        <li>Z理論 = 日本式管理 → 團隊共識決策、長期僱用、組成小組改善專案</li>
+        <li>Peter Drucker 目標管理(MBO) = 參與式管理（非權威式/放任式/民主式）</li>
+        <li>增強理論：行為會根據「隨之而來的結果」做修正</li>
+        <li>傳統 vs 修正理論主要差異：參與式決策和團體價值觀</li>
+        <li>Gillies管理五大步驟中「規劃」包含：制定標準、擬定政策、作成決策、編列預算</li>
+      </ul>
+    </div>
+
+    <!-- 人力/排班/模式 -->
+    <h2 class="section-title" id="staffing">人力 / 排班 / 護理模式</h2>
+    <div class="sys-header">
+      <span class="sys-icon">&#x1F465;</span> 護理人力、排班與照護模式
+      <span class="sys-pct">佔比約 8.7% ｜ 每次必考 3-5 題</span>
+    </div>
+    <div class="card">
+      <h3>出題重點分析</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>主題</th><th>出題頻率</th><th>重要度</th><th>常見考點</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>護理照護模式</td>
+              <td class="freq-high">每次必考</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>功能護理（按技術分工、新進多）；成組護理（經驗少人力多時適用）；全責護理（一位護理師全權負責）；技術混合照護（不同能力人員搭配）</td>
+            </tr>
+            <tr>
+              <td>人力計算/缺勤率</td>
+              <td class="freq-high">每次必考</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>缺勤率計算：請假天數/(員工數×工作天數)×100%；護病比；病人分類系統(PCS)功能；人力彈性運用策略</td>
+            </tr>
+            <tr>
+              <td>排班類型</td>
+              <td class="freq-mid">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;</td>
+              <td>分權式排班→依單位人員意願、人力短缺時不靈活；自我排班→提高自主性責任感、休假重複時不易協調</td>
+            </tr>
+            <tr>
+              <td>人力彈性策略</td>
+              <td class="freq-mid">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;</td>
+              <td>數量彈性（增減人力）；職能彈性（技術混合照護）；時間彈性（工作分享制、彈性班別）</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="must-know">
+      <h4>人力/排班/模式必背要點</h4>
+      <ul>
+        <li>功能護理 = 按技術/任務分工、以工作為中心 → 新進護理師多時適用</li>
+        <li>成組護理 = 經驗豐富護理師帶領小組 → 資淺多/臨床經驗少時適用</li>
+        <li>傳染病大流行 → 隔離病房宜採功能性護理</li>
+        <li>缺勤率 = 請假天數 / (員工數 × 工作天數) × 100%；如：60 / (100×240) × 100% = 0.25%</li>
+        <li>病人分類系統(PCS)可作為：護理收費標準、評估績效、滿足照護需求（非病人預後指標）</li>
+        <li>數量彈性=增減人力；職能彈性=技術混合；時間彈性=工作分享/彈性班別</li>
+      </ul>
+    </div>
+
+    <!-- 品質管理/病安 -->
+    <h2 class="section-title" id="quality">品質管理 / 病人安全</h2>
+    <div class="sys-header">
+      <span class="sys-icon">&#x2705;</span> 品質管理與病人安全
+      <span class="sys-pct">佔比約 5.3% ｜ 每次必考 2-3 題</span>
+    </div>
+    <div class="card">
+      <h3>出題重點分析</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>主題</th><th>出題頻率</th><th>重要度</th><th>常見考點</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PDCA循環</td>
+              <td class="freq-high">每次必考</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>Plan=擬定計畫；Do=執行；Check=查核落實度（如跌倒評估落實度、扶手使用率）；Act=標準化或修正行動</td>
+            </tr>
+            <tr>
+              <td>病人安全事件分類</td>
+              <td class="freq-high">每次必考</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>警訊事件(sentinel)=最嚴重；跡近錯失(near miss)=及時介入未發生；傷害行為事件=病人暴力攻擊；治安事件=外部威脅</td>
+            </tr>
+            <tr>
+              <td>通報系統原則</td>
+              <td class="freq-high">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;</td>
+              <td>匿名、自願、保密、不究責、共同學習；不以釐清責任歸屬為目的</td>
+            </tr>
+            <tr>
+              <td>根本原因分析(RCA)</td>
+              <td class="freq-mid">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;</td>
+              <td>屬回溯式分析（非預應式）；主要分析根本原因（非近端原因）；組織小組進行</td>
+            </tr>
+            <tr>
+              <td>品管主題選擇</td>
+              <td class="freq-mid">中頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;</td>
+              <td>品管主題選擇考量：發生頻率高的護理活動（非低風險/非簡單不耗成本/非延續去年）</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="must-know">
+      <h4>品質管理/病安必背要點</h4>
+      <ul>
+        <li>PDCA的Check = 查核/稽核（如查核跌倒評估落實度）；非擬定計畫、非執行</li>
+        <li>跡近錯失(near miss) = 及時介入使原本可能的意外「未真正發生」</li>
+        <li>傷害行為事件 = 病人或他人攻擊護理人員</li>
+        <li>通報系統原則：匿名、自願（非實名/非強制）</li>
+        <li>RCA = 回溯式系統分析（非預應式）、分析根本原因（非近端原因）、組織小組進行</li>
+        <li>COVID-19確診病人持刀傷害護理師 → 通報「傷害行為事件」</li>
+      </ul>
+    </div>
+
+    <!-- 領導/組織/績效 -->
+    <h2 class="section-title" id="leadership">領導 / 組織 / 績效</h2>
+    <div class="sys-header">
+      <span class="sys-icon">&#x1F451;</span> 領導理論、組織結構與績效考核
+      <span class="sys-pct">佔比約 9.5% ｜ 每次必考 3-5 題</span>
+    </div>
+    <div class="card">
+      <h3>出題重點分析</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>主題</th><th>出題頻率</th><th>重要度</th><th>常見考點</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>領導理論</td>
+              <td class="freq-high">每次必考</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>Hersey-Blanchard情境領導：低能力低意願→告知式(S1/移轉策略)；Blake-Mouton管理方格：(9,1)=職責管理式、(5,5)=中庸式、(9,9)=團隊管理式</td>
+            </tr>
+            <tr>
+              <td>權力類型</td>
+              <td class="freq-high">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;</td>
+              <td>獎勵權（升職加薪正面評價）；專家權/影響力（臨床知識技能指導）；法統權（合法職位權力）；參考權（榜樣影響力）</td>
+            </tr>
+            <tr>
+              <td>組織結構</td>
+              <td class="freq-high">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;</td>
+              <td>集權式→減少工作重複及成本；分權式→扁平式結構、員工自主性高；高聳式→層級多、控制嚴；扁平式→各階層自主權多</td>
+            </tr>
+            <tr>
+              <td>績效考核偏誤</td>
+              <td class="freq-high">每次必考</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>觸角效應/近因效應（考核前爭執→低分）；月暈效應（halo）；寬厚/嚴苛錯誤；向日葵效應；膨脹壓力；中央趨勢</td>
+            </tr>
+            <tr>
+              <td>績效考核原則</td>
+              <td class="freq-mid">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;</td>
+              <td>最初考核者=直屬主管；可作為獎懲晉升依據；內容配合個人職涯目標及主管要求</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="must-know">
+      <h4>領導/組織/績效必背要點</h4>
+      <ul>
+        <li>低能力+低意願 → 告知式領導(S1) / 移轉策略</li>
+        <li>Blake-Mouton (9,1) = 職責管理式（高業績低關心人）；(1,1)=無為式；(9,9)=團隊管理式</li>
+        <li>觸角效應/近因效應 = 考核前發生爭執而給予較低分數</li>
+        <li>月暈效應 = 因某一優點概括評定所有面向</li>
+        <li>集權式組織優點 = 減少工作重複及成本（非員工自由受尊重）</li>
+        <li>分權化程度高 → 扁平式結構 → 員工自主權多</li>
+        <li>Jaques：W＞C＞P（工作量>能力>報酬）→ 員工有被剝削懲罰感</li>
+      </ul>
+    </div>
+
+    <!-- 法規/成本/進階 -->
+    <h2 class="section-title" id="law">法規 / 成本 / 臨床進階</h2>
+    <div class="sys-header">
+      <span class="sys-icon">&#x2696;</span> 護理法規、成本管理與臨床進階
+      <span class="sys-pct">佔比約 7.7% ｜ 每次必考 2-4 題</span>
+    </div>
+    <div class="card">
+      <h3>出題重點分析</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>主題</th><th>出題頻率</th><th>重要度</th><th>常見考點</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>護理人員法</td>
+              <td class="freq-high">每次必考</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+              <td>證照租借→廢止護理人員證書；停業逾2年辦理歇業（非3年）；受停業處分仍執業→廢止執業執照；護理人員法不能免於刑罰</td>
+            </tr>
+            <tr>
+              <td>成本管理</td>
+              <td class="freq-high">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;</td>
+              <td>損益平衡點計算：固定成本/(1-變動成本率)；直接成本（護理人員薪資）；間接成本（水電空調）；不可使用報廢醫療儀器</td>
+            </tr>
+            <tr>
+              <td>Benner臨床進階</td>
+              <td class="freq-high">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;&#9733;</td>
+              <td>生手→進階學習者→勝任者（2-3年）→精通者→專家；N1→N2→N3→N4進階制度；N2進階需教學原理與方法、危機處理</td>
+            </tr>
+            <tr>
+              <td>醫療糾紛處理</td>
+              <td class="freq-mid">高頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;</td>
+              <td>優先誠實面對病人/家屬；問題解決：優先處理影響組織利益最大的問題</td>
+            </tr>
+            <tr>
+              <td>勞動法規</td>
+              <td class="freq-mid">中頻</td>
+              <td class="stars">&#9733;&#9733;&#9733;</td>
+              <td>哺乳期每日另給擠乳2次各30分鐘；職業危害：下背痛、靜脈曲張、椎間盤凸出（非自律神經失調）</td>
+            </tr>
+            <tr>
+              <td>溝通/時間管理</td>
+              <td class="freq-mid">中頻</td>
+              <td class="stars">&#9733;&#9733;</td>
+              <td>時間管理優先順序：重要且緊急 > 重要但不緊急 > 不重要但緊急 > 不重要不緊急</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="must-know">
+      <h4>法規/成本/進階必背要點</h4>
+      <ul>
+        <li>證照租借他人使用 → 廢止「護理人員證書」</li>
+        <li>護理人員法不保障免於刑罰（過失傷害仍須面臨刑事責任）</li>
+        <li>損益平衡點 = 固定成本 / (1-變動成本/營收) → 400萬/(1-600/1000) = 1000萬</li>
+        <li>直接成本 = 護理人員薪資；間接成本 = 水電空調、電腦設備</li>
+        <li>Benner：到職2.5年→勝任者(competent)（非精通者/進階學習者）</li>
+        <li>N1→N2進階訓練：教學原理與方法 + 危機處理</li>
+        <li>5W1H訂工作目標缺乏「When」→ 缺乏完成時間性</li>
+        <li>護理人力成本計算：月薪/月工時 × 活動時數 = 45000/180 × 1.5 = 375元</li>
+      </ul>
+    </div>
+
+    <!-- 歷年趨勢變化 -->
+    <h2 class="section-title" id="trends">歷年趨勢變化</h2>
+    <div class="card">
+      <h3>命題趨勢觀察</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h4>111年~112年前期（80題制）</h4>
+          <p>題數多，涵蓋面廣，較多基礎知識記憶型考題。管理理論考得較為基礎，多為「是誰提出的」「屬於哪個理論」等辨識型題目。</p>
+        </div>
+        <div class="timeline-item">
+          <h4>112年第三次（50題制開始）</h4>
+          <p>改制後每題2分，比重倍增。開始出現更多情境應用題，需要理解後判斷而非純記憶。給藥劑量計算題維持穩定出題。</p>
+        </div>
+        <div class="timeline-item">
+          <h4>113年~114年</h4>
+          <p>臨床情境題比重明顯增加，如：安寧緩和病人自拔管路的護理處置、傳染病大流行時的照護模式選擇。病人安全與通報系統題目穩定出現，呼應實務重視程度。</p>
+        </div>
+        <div class="timeline-item">
+          <h4>114年第三次~115年第一次（最新趨勢）</h4>
+          <p>整合性情境題增多，一題常跨越基護與行政兩領域。法規題更貼近實際場景（如哺乳期擠乳、醫療糾紛處理）。成本計算/人力計算等數學題穩定1-2題。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>高頻考點穩定性分析</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>主題</th><th>12次出題穩定度</th><th>趨勢</th><th>備考建議</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>給藥（途徑/劑量/縮寫）</td><td class="freq-high">極穩定</td><td>持平</td><td>必背醫囑縮寫表+劑量計算公式</td></tr>
+            <tr><td>輸液/輸血併發症</td><td class="freq-high">極穩定</td><td>持平</td><td>熟記各種併發症處置流程</td></tr>
+            <tr><td>冷熱療法效應</td><td class="freq-high">極穩定</td><td>持平</td><td>整理冷vs熱的生理效應對照表</td></tr>
+            <tr><td>管理理論辨識</td><td class="freq-high">極穩定</td><td>持平</td><td>整理各理論代表人物與核心觀點</td></tr>
+            <tr><td>護理模式選擇</td><td class="freq-high">極穩定</td><td>持平</td><td>熟記各模式適用情境</td></tr>
+            <tr><td>病人安全/通報</td><td class="freq-high">穩定</td><td>略增</td><td>RCA/FMEA/事件分類需精準辨別</td></tr>
+            <tr><td>臨床進階(Benner)</td><td class="freq-mid">穩定</td><td>持平</td><td>五階段年資對應需背熟</td></tr>
+            <tr><td>護理法規</td><td class="freq-mid">穩定</td><td>略增</td><td>注意最新修法與實務場景題</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 考前衝刺建議 -->
+    <h2 class="section-title" id="study">考前衝刺建議</h2>
+    <div class="plan-grid">
+      <div class="plan-card urgent">
+        <h4>第一優先：高分值核心</h4>
+        <span class="plan-days">佔分超過30%</span>
+        <ul>
+          <li>給藥（醫囑縮寫、五對、劑量計算、注射技術）</li>
+          <li>輸液/輸血（併發症處置、注意事項）</li>
+          <li>護理過程（資料辨別、問題排序、目標設定）</li>
+          <li>管理理論（Taylor/Fayol/XYZ/MBO辨識）</li>
+          <li>護理人力/排班/模式（計算+模式選擇）</li>
+        </ul>
+      </div>
+      <div class="plan-card warning">
+        <h4>第二優先：穩定出題</h4>
+        <span class="plan-days">佔分約30%</span>
+        <ul>
+          <li>感染控制/無菌技術（內外科無菌區別、隔離）</li>
+          <li>生命徵象（發燒型態、血壓測量部位）</li>
+          <li>冷熱療法（用熱效應、坐浴、耐受性）</li>
+          <li>排泄照護（導尿、灌腸、排便促進）</li>
+          <li>品質管理/病安（PDCA、事件分類、RCA）</li>
+          <li>領導理論/組織/績效（情境領導、考核偏誤）</li>
+        </ul>
+      </div>
+      <div class="plan-card safe">
+        <h4>第三優先：基礎鞏固</h4>
+        <span class="plan-days">佔分約25%</span>
+        <ul>
+          <li>營養/管灌（清流質飲食、鼻胃管護理）</li>
+          <li>活動與擺位（翻身原則、運動類型）</li>
+          <li>溝通技巧（Berlo模式、治療性溝通）</li>
+          <li>傷口/繃帶/檢體收集</li>
+          <li>臨終護理（Kubler-Ross、遺體護理）</li>
+          <li>法規/成本/進階（護理人員法、損益平衡、Benner）</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>備考策略總結</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>策略</th><th>說明</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>基護與行政兼顧</td><td>兩領域比重約6:4，不可只讀技術或只讀行政。行政的理論辨識題相對好拿分，不要放棄。</td></tr>
+            <tr><td>重計算題練習</td><td>給藥劑量計算、點滴速率、缺勤率、損益平衡點、人力成本等每次必考1-3題數學計算題。</td></tr>
+            <tr><td>整理對照表</td><td>冷vs熱效應、內科vs外科無菌、各管理理論代表人物、各發燒型態對應疾病等，做成速記表反覆記憶。</td></tr>
+            <tr><td>注意陷阱選項</td><td>許多題目在選項中微調一個關鍵詞（如「腎臟」改「肝臟」、「3年」改「2年」），必須精準記憶。</td></tr>
+            <tr><td>熟練情境判斷</td><td>新制50題更注重情境應用。練習從題幹情境判斷適用哪個原則/理論/處置方式。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 必背清單 -->
+    <h2 class="section-title" id="must-know">必背清單</h2>
+    <div class="must-know">
+      <h4>基本護理學 Top 20 必背</h4>
+      <ul>
+        <li>給藥五對：病人對、藥物對、劑量對、途徑對、時間對</li>
+        <li>外科無菌技術 = 滅菌技術，用於侵入性治療（導尿管、術後換藥）</li>
+        <li>肺結核→空氣傳染防護；疥瘡→接觸傳染防護；骨髓移植→保護性隔離</li>
+        <li>沾染血液體液 → 用肥皂水洗手（非酒精乾洗手）</li>
+        <li>主觀資料 = 病人主訴（如「感覺頭痛」）；客觀資料 = 觀察測量值</li>
+        <li>護理問題排序依Maslow：呼吸困難 > 疼痛 > 睡眠 > 心像</li>
+        <li>間歇熱=敗血症；弛張熱=術後感染；稽留熱=大葉性肺炎；回歸熱=肺結核</li>
+        <li>輸血前15-30分鐘慢速20-40gtt/min；加壓器≤300mmHg；加溫器38-40℃</li>
+        <li>血栓靜脈炎→立即移除原針頭、抬高患肢</li>
+        <li>用熱效應：降低血液黏稠度、增加微血管通透性（非降低）</li>
+        <li>冷熱共同效果 = 減緩疼痛</li>
+        <li>坐浴溫度41-43℃；浸泡約20分鐘；頭暈=姿勢性低血壓→頭低於心臟</li>
+        <li>清流質 = 蜂蜜水/去油清湯/無渣米湯（非牛奶/豆漿/含渣果汁）</li>
+        <li>鼻胃管矽膠材質7-10天更換；每日旋轉約45度</li>
+        <li>壓力性損傷預防：鼓勵主動運動（不可用氣墊圈/不可按摩/不可烤燈）</li>
+        <li>穿脫衣服：脫健側先、穿患側先</li>
+        <li>存留導尿：女性潤滑5-7cm、水球注入5-10mL無菌蒸餾水</li>
+        <li>腹部按摩促排便：由「右至左」順結腸方向</li>
+        <li>Kubler-Ross：否認→憤怒→討價還價→憂鬱→接受（不一定按順序）</li>
+        <li>Berlo SMCR 溝通模式：發訊者→訊息→管道→收訊者</li>
+      </ul>
+    </div>
+
+    <div class="must-know">
+      <h4>護理行政 Top 15 必背</h4>
+      <ul>
+        <li>Taylor 科學管理=工作標準化+時間動作研究；Fayol=管理程序(PODC)</li>
+        <li>X理論=人性本惡消極；Y理論=人性本善積極；Z理論=日本團隊共識</li>
+        <li>Peter Drucker 目標管理(MBO)=參與式管理</li>
+        <li>功能護理=按任務分工；成組護理=小組合作；全責護理=一人全權負責</li>
+        <li>傳染病大流行隔離病房 → 功能性護理模式</li>
+        <li>情境領導：低能力低意願→告知式(S1)→移轉策略</li>
+        <li>Blake-Mouton (9,1)=職責管理式(高業績低關心人)</li>
+        <li>觸角/近因效應=考核前發生的事件影響評分</li>
+        <li>集權式優點=減少工作重複及成本</li>
+        <li>PDCA Check=查核/稽核（非計畫、非執行）</li>
+        <li>跡近錯失=及時介入使意外未真正發生</li>
+        <li>通報系統=匿名+自願+保密+不究責+共同學習</li>
+        <li>RCA=回溯式（非預應式）；分析根本原因；組織小組</li>
+        <li>Benner五階段：生手→進階學習者→勝任者(2-3年)→精通者→專家</li>
+        <li>損益平衡點 = 固定成本 ÷ (1 - 變動成本率)</li>
+      </ul>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>護理師國考「基本護理學與護理行政」完整分析報告</p>
+      <p>資料來源：111年第一次 ~ 115年第一次 護理師專技高考歷屆試題（共12次720題）</p>
+      <p style="margin-top: 8px;">&copy; 2026 版權所有，僅供個人備考使用，未經同意請勿轉載或公開散布</p>
+    </div>
+
+  </div>
+</div>

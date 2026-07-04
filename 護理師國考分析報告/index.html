@@ -1,0 +1,271 @@
+<title>護理師國考分析報告 - 首頁</title>
+<style>
+  :root {
+    --text: #212121;
+    --text-light: #546E7A;
+    --white: #FFFFFF;
+    --shadow: 0 4px 16px rgba(0,0,0,0.10);
+    --shadow-hover: 0 8px 32px rgba(0,0,0,0.18);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Microsoft JhengHei", sans-serif;
+    color: var(--text); background: #F5F7FA; line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #1A237E 0%, #4A148C 40%, #880E4F 80%, #BF360C 100%);
+    color: var(--white); padding: 60px 40px 50px; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -80px; right: -80px;
+    width: 350px; height: 350px; border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+  }
+  .hero::after {
+    content: ''; position: absolute; bottom: -100px; left: 15%;
+    width: 450px; height: 450px; border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .hero h1 {
+    font-size: 36px; font-weight: 800; margin-bottom: 12px;
+    position: relative; z-index: 1;
+  }
+  .hero .subtitle {
+    font-size: 18px; opacity: 0.85; position: relative; z-index: 1;
+  }
+  .hero .info {
+    margin-top: 20px; font-size: 14px; opacity: 0.65;
+    position: relative; z-index: 1;
+  }
+
+  .container {
+    max-width: 1000px; margin: -40px auto 0; padding: 0 24px 60px;
+    position: relative; z-index: 2;
+  }
+
+  .cards {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .card {
+    background: var(--white); border-radius: 16px;
+    box-shadow: var(--shadow); overflow: hidden;
+    transition: all 0.3s ease; cursor: pointer;
+    text-decoration: none; color: var(--text);
+    display: flex; flex-direction: column;
+    position: relative;
+  }
+  .card:hover {
+    transform: translateY(-6px); box-shadow: var(--shadow-hover);
+  }
+  .card.disabled {
+    opacity: 0.55; cursor: default;
+  }
+  .card.disabled:hover {
+    transform: none; box-shadow: var(--shadow);
+  }
+
+  .card-header {
+    padding: 28px 28px 20px; color: var(--white);
+    position: relative;
+  }
+  .card-header h2 {
+    font-size: 22px; font-weight: 800; margin-bottom: 6px;
+    position: relative; z-index: 1;
+  }
+  .card-header .card-sub {
+    font-size: 13px; opacity: 0.8; position: relative; z-index: 1;
+  }
+  .card-header::after {
+    content: ''; position: absolute; top: -30px; right: -30px;
+    width: 120px; height: 120px; border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+  }
+
+  .card-body {
+    padding: 20px 28px 28px; flex: 1;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .card-body .topics {
+    font-size: 14px; color: var(--text-light); margin-bottom: 16px;
+    line-height: 1.8;
+  }
+  .card-body .badge-row {
+    display: flex; gap: 8px; flex-wrap: wrap;
+  }
+  .card-body .badge {
+    display: inline-block; padding: 4px 12px; border-radius: 14px;
+    font-size: 12px; font-weight: 600;
+  }
+  .card-body .badge.done {
+    background: #E8F5E9; color: #2E7D32;
+  }
+  .card-body .badge.pending {
+    background: #FFF3E0; color: #E65100;
+  }
+
+  /* Subject-specific colors */
+  .card[data-subject="basic-med"] .card-header {
+    background: linear-gradient(135deg, #0B5345, #148F77);
+  }
+  .card[data-subject="med-surg"] .card-header {
+    background: linear-gradient(135deg, #1A237E, #283593);
+  }
+  .card[data-subject="basic-nursing"] .card-header {
+    background: linear-gradient(135deg, #6A1B9A, #7B1FA2);
+  }
+  .card[data-subject="peds-ob"] .card-header {
+    background: linear-gradient(135deg, #BF360C, #D84315);
+  }
+  .card[data-subject="psych-comm"] .card-header {
+    background: linear-gradient(135deg, #006064, #00838F);
+  }
+
+  .progress-section {
+    margin-top: 40px; text-align: center;
+  }
+  .progress-bar-wrap {
+    max-width: 500px; margin: 16px auto; background: #E0E0E0;
+    border-radius: 10px; height: 20px; overflow: hidden;
+  }
+  .progress-bar-fill {
+    height: 100%; border-radius: 10px;
+    background: linear-gradient(90deg, #2E7D32, #43A047);
+    width: 60%; transition: width 0.5s;
+  }
+  .progress-label {
+    font-size: 15px; color: var(--text-light); margin-top: 8px;
+  }
+
+  .footer {
+    text-align: center; padding: 32px; color: var(--text-light);
+    font-size: 13px; border-top: 1px solid #E0E0E0; margin-top: 40px;
+  }
+
+  @media (max-width: 700px) {
+    .hero { padding: 40px 20px 36px; }
+    .hero h1 { font-size: 26px; }
+    .container { padding: 0 16px 40px; }
+    .cards { grid-template-columns: 1fr; }
+  }
+
+  @media print {
+    .hero { padding: 24px; }
+    .card { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
+  }
+</style>
+
+<div class="hero">
+  <h1>護理師國考完整分析報告</h1>
+  <div class="subtitle">111年第一次 ~ 115年第一次　共12次考試全面解析</div>
+  <div class="info">點選下方科目卡片即可查看該科完整分析報告</div>
+</div>
+
+<div class="container">
+  <div class="cards">
+
+    <!-- 基礎醫學 -->
+    <a class="card" data-subject="basic-med" href="基礎醫學_完整分析報告.html">
+      <div class="card-header">
+        <h2>基礎醫學</h2>
+        <div class="card-sub">解剖學、生理學、藥理學、微生物免疫學、病理學</div>
+      </div>
+      <div class="card-body">
+        <div class="topics">
+          涵蓋人體各系統解剖與生理機轉、常見藥物分類與作用機制、微生物感染與免疫反應、病理變化與疾病機轉等基礎醫學核心知識。
+        </div>
+        <div class="badge-row">
+          <span class="badge done">HTML 已完成</span>
+          <span class="badge done">Word 已完成</span>
+          <span class="badge done">PPT 已完成</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 內外科護理學 -->
+    <a class="card" data-subject="med-surg" href="內外科護理學_完整分析報告.html">
+      <div class="card-header">
+        <h2>內外科護理學</h2>
+        <div class="card-sub">11大系統疾病護理</div>
+      </div>
+      <div class="card-body">
+        <div class="topics">
+          涵蓋神經、消化、心血管、呼吸、腎臟泌尿、內分泌、血液腫瘤免疫、骨骼肌肉、皮膚、感覺、急重症急救等11大系統護理照護。
+        </div>
+        <div class="badge-row">
+          <span class="badge done">HTML 已完成</span>
+          <span class="badge done">Word 已完成</span>
+          <span class="badge done">PPT 已完成</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 基本護理學與護理行政 -->
+    <a class="card" data-subject="basic-nursing" href="基本護理學_完整分析報告.html">
+      <div class="card-header">
+        <h2>基本護理學與護理行政</h2>
+        <div class="card-sub">護理原理、護理技術、護理行政管理</div>
+      </div>
+      <div class="card-body">
+        <div class="topics">
+          基本護理學（給藥、輸液輸血、感染控制、生命徵象、冷熱療法、排泄照護、營養管灌、活動擺位、溝通、臨終護理）與護理行政（管理理論、人力排班、品質管理、領導組織、法規成本）。
+        </div>
+        <div class="badge-row">
+          <span class="badge done">HTML 已完成</span>
+          <span class="badge done">Word 已完成</span>
+          <span class="badge done">PPT 已完成</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 產兒科護理學 -->
+    <div class="card disabled" data-subject="peds-ob">
+      <div class="card-header">
+        <h2>產兒科護理學</h2>
+        <div class="card-sub">產科護理、兒科護理</div>
+      </div>
+      <div class="card-body">
+        <div class="topics">
+          涵蓋產前產後護理、高危險妊娠、分娩護理、新生兒照護、兒童發展評估、兒科常見疾病護理等。
+        </div>
+        <div class="badge-row">
+          <span class="badge pending">尚未產生</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 精神科與社區衛生護理學 -->
+    <div class="card disabled" data-subject="psych-comm">
+      <div class="card-header">
+        <h2>精神科與社區衛生護理學</h2>
+        <div class="card-sub">精神科護理、社區衛生護理</div>
+      </div>
+      <div class="card-body">
+        <div class="topics">
+          涵蓋精神疾病分類與護理、治療性人際關係、精神科藥物、社區衛生護理概念、流行病學、長期照護、公共衛生政策等。
+        </div>
+        <div class="badge-row">
+          <span class="badge pending">尚未產生</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 進度 -->
+  <div class="progress-section">
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill"></div>
+    </div>
+    <div class="progress-label">整體進度：3 / 5 科目已完成（60%）</div>
+  </div>
+
+  <div class="footer">
+    <p>護理師國考完整分析報告　｜　111年第一次 ~ 115年第一次（共12次720題/科）</p>
+    <p style="margin-top: 8px;">&copy; 2026 版權所有，僅供個人備考使用，未經同意請勿轉載或公開散布</p>
+  </div>
+</div>
