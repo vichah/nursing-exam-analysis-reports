@@ -1,0 +1,1206 @@
+<title>產兒科護理學 - 護理師國考完整分析報告</title>
+<style>
+  :root {
+    --primary: #BF360C;
+    --secondary: #D84315;
+    --accent: #FF7043;
+    --light-bg: #FBE9E7;
+    --sidebar-w: 260px;
+    --text: #333;
+    --text-light: #666;
+    --border: #e0e0e0;
+    --card-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    --radius: 8px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Microsoft JhengHei', 'Noto Sans TC', 'PingFang TC', sans-serif;
+    color: var(--text);
+    background: #f5f5f5;
+    line-height: 1.7;
+  }
+  /* Sidebar */
+  .sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: var(--sidebar-w);
+    height: 100vh;
+    background: linear-gradient(180deg, #BF360C 0%, #D84315 100%);
+    color: #fff;
+    overflow-y: auto;
+    z-index: 1000;
+    padding-bottom: 30px;
+  }
+  .sidebar::-webkit-scrollbar { width: 4px; }
+  .sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.3); border-radius: 2px; }
+  .sidebar-title {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 28px 20px 8px;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+  .sidebar-subtitle {
+    font-size: 12px;
+    color: rgba(255,255,255,0.65);
+    text-align: center;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    margin-bottom: 6px;
+  }
+  .sidebar nav a {
+    display: block;
+    padding: 9px 20px 9px 24px;
+    color: rgba(255,255,255,0.82);
+    text-decoration: none;
+    font-size: 13.5px;
+    border-left: 3px solid transparent;
+    transition: all 0.2s;
+  }
+  .sidebar nav a:hover, .sidebar nav a.active {
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    border-left-color: var(--accent);
+  }
+  .sidebar nav .nav-group {
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 14px 20px 4px 24px;
+    font-weight: 600;
+  }
+  /* Main */
+  .main {
+    margin-left: var(--sidebar-w);
+    padding: 36px 44px 60px;
+    max-width: 1100px;
+  }
+  .hero {
+    background: linear-gradient(135deg, #BF360C 0%, #E64A19 60%, #FF7043 100%);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 40px 44px;
+    margin-bottom: 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .hero h1 { font-size: 30px; margin-bottom: 8px; position: relative; z-index: 1; }
+  .hero p { font-size: 15px; opacity: 0.88; position: relative; z-index: 1; }
+  .hero .hero-stats {
+    display: flex; gap: 32px; margin-top: 22px; position: relative; z-index: 1;
+  }
+  .hero .hero-stat { text-align: center; }
+  .hero .hero-stat .num { font-size: 32px; font-weight: 700; }
+  .hero .hero-stat .lbl { font-size: 12px; opacity: 0.75; }
+
+  section { margin-bottom: 40px; }
+  .section-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary);
+    border-left: 4px solid var(--primary);
+    padding-left: 14px;
+    margin-bottom: 20px;
+    padding-bottom: 6px;
+  }
+  .section-desc {
+    color: var(--text-light);
+    font-size: 14px;
+    margin-bottom: 18px;
+    line-height: 1.8;
+  }
+  /* Cards */
+  .card {
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--card-shadow);
+    padding: 26px 28px;
+    margin-bottom: 22px;
+    border: 1px solid var(--border);
+  }
+  .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-title .badge {
+    font-size: 11px;
+    background: var(--light-bg);
+    color: var(--primary);
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  table th {
+    background: var(--primary);
+    color: #fff;
+    padding: 11px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  table th:first-child { border-radius: 6px 0 0 0; }
+  table th:last-child { border-radius: 0 6px 0 0; }
+  table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #f0e0d8;
+  }
+  table tr:nth-child(even) td { background: var(--light-bg); }
+  table tr:hover td { background: #fce4d6; }
+  /* Progress bar */
+  .pbar-wrap { background: #f5e0d5; border-radius: 6px; height: 10px; width: 100%; overflow: hidden; }
+  .pbar { height: 100%; border-radius: 6px; background: linear-gradient(90deg, var(--primary), var(--accent)); transition: width 0.5s; }
+  /* Stars */
+  .stars { color: var(--accent); letter-spacing: 1px; }
+  /* Tag */
+  .tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .tag-up { background: #E8F5E9; color: #2E7D32; }
+  .tag-stable { background: #E3F2FD; color: #1565C0; }
+  .tag-hot { background: #FFF3E0; color: #E65100; }
+  /* Flex grid */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; }
+  .stat-card {
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border);
+    padding: 22px;
+    text-align: center;
+  }
+  .stat-card .stat-num { font-size: 36px; font-weight: 700; color: var(--primary); }
+  .stat-card .stat-lbl { font-size: 13px; color: var(--text-light); margin-top: 4px; }
+  /* Check list */
+  .checklist { list-style: none; padding: 0; }
+  .checklist li {
+    padding: 7px 0 7px 26px;
+    position: relative;
+    font-size: 14px;
+    line-height: 1.8;
+    border-bottom: 1px solid #f5ece8;
+  }
+  .checklist li::before {
+    content: '✦';
+    position: absolute;
+    left: 4px;
+    color: var(--accent);
+    font-size: 12px;
+    top: 9px;
+  }
+  /* Week plan */
+  .week-header {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: var(--radius) var(--radius) 0 0;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .week-body {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 var(--radius) var(--radius);
+    padding: 0;
+  }
+  .day-row {
+    display: flex;
+    border-bottom: 1px solid #f5ece8;
+    font-size: 14px;
+  }
+  .day-row:last-child { border-bottom: none; }
+  .day-label {
+    width: 80px;
+    min-width: 80px;
+    padding: 12px 14px;
+    font-weight: 700;
+    color: var(--primary);
+    background: var(--light-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .day-content {
+    padding: 12px 18px;
+    flex: 1;
+  }
+  /* Highlight box */
+  .highlight-box {
+    background: var(--light-bg);
+    border-left: 4px solid var(--accent);
+    padding: 16px 22px;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin-bottom: 18px;
+    font-size: 14px;
+  }
+  /* Donut style summary */
+  .donut-summary {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .donut-svg { width: 180px; height: 180px; }
+  .donut-legend { flex: 1; min-width: 200px; }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 0;
+    font-size: 14px;
+  }
+  .legend-dot {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: #999;
+    font-size: 12px;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+  /* Print */
+  @media print {
+    .sidebar { display: none; }
+    .main { margin-left: 0; padding: 20px; }
+    .hero { background: var(--primary) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    table th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+  /* Responsive */
+  @media (max-width: 900px) {
+    .sidebar { width: 220px; }
+    .main { margin-left: 220px; padding: 24px 20px; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .grid-3 { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .sidebar { display: none; }
+    .main { margin-left: 0; padding: 16px; }
+    .grid-3 { grid-template-columns: 1fr; }
+    .hero { padding: 24px; }
+    .hero h1 { font-size: 22px; }
+  }
+  .overflow-x { overflow-x: auto; }
+</style>
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <a href="index.html" style="display:block;padding:10px 20px 12px;font-size:13px;color:rgba(255,255,255,0.7);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.12);margin-bottom:8px;transition:all 0.2s;" onmouseover="this.style.color='#fff';this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.color='rgba(255,255,255,0.7)';this.style.background='transparent'">&#9664; 返回首頁</a>
+  <div class="sidebar-title">產兒科護理學</div>
+  <div class="sidebar-subtitle">護理師國考完整分析報告</div>
+  <nav>
+    <div class="nav-group">總覽</div>
+    <a href="#overview">考試總覽</a>
+    <a href="#structure">考試結構</a>
+    <a href="#distribution">科目分布</a>
+    <div class="nav-group">產科護理學</div>
+    <a href="#obs-topics">產科主題分析</a>
+    <a href="#obs-must">產科必考重點</a>
+    <div class="nav-group">兒科護理學</div>
+    <a href="#ped-topics">兒科主題分析</a>
+    <a href="#ped-must">兒科必考重點</a>
+    <div class="nav-group">備考策略</div>
+    <a href="#difficulty">難易度分析</a>
+    <a href="#strategy">應考策略</a>
+    <a href="#study-plan">四週讀書計畫</a>
+    <a href="#resources">學習資源</a>
+  </nav>
+</div>
+
+<!-- Main Content -->
+<div class="main">
+
+  <!-- Hero -->
+  <div class="hero" id="overview">
+    <h1>產兒科護理學 完整分析報告</h1>
+    <p>護理師國家考試 ── 111年第一次至115年第一次，共12屆考題深度分析</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">720</div><div class="lbl">總題數</div></div>
+      <div class="hero-stat"><div class="num">12</div><div class="lbl">屆考試</div></div>
+      <div class="hero-stat"><div class="num">22</div><div class="lbl">主題分類</div></div>
+      <div class="hero-stat"><div class="num">55%</div><div class="lbl">產科佔比</div></div>
+    </div>
+  </div>
+
+  <!-- 考試結構 -->
+  <section id="structure">
+    <h2 class="section-title">考試結構總覽</h2>
+    <p class="section-desc">本科考試涵蓋產科護理學與兒科護理學兩大領域，自112年第三次起由80題調整為50題，每題配分從1.25分調為2分，總分維持100分。考題形式均為單選題。</p>
+
+    <div class="grid-3">
+      <div class="stat-card">
+        <div class="stat-num">720</div>
+        <div class="stat-lbl">12屆累計總題數</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">~400</div>
+        <div class="stat-lbl">產科護理學題數</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">~320</div>
+        <div class="stat-lbl">兒科護理學題數</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:22px;">
+      <div class="card-title">各屆考試配置</div>
+      <div class="overflow-x">
+        <table>
+          <thead>
+            <tr>
+              <th>屆別</th>
+              <th>題數</th>
+              <th>每題配分</th>
+              <th>滿分</th>
+              <th>題型</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>111年第一次</td><td>80</td><td>1.25分</td><td>100分</td><td>單選題</td></tr>
+            <tr><td>111年第二次</td><td>80</td><td>1.25分</td><td>100分</td><td>單選題</td></tr>
+            <tr><td>112年第一次</td><td>80</td><td>1.25分</td><td>100分</td><td>單選題</td></tr>
+            <tr><td>112年第二次</td><td>80</td><td>1.25分</td><td>100分</td><td>單選題</td></tr>
+            <tr><td>112年第三次</td><td>50</td><td>2分</td><td>100分</td><td>單選題</td></tr>
+            <tr><td>113年第一次</td><td>50</td><td>2分</td><td>100分</td><td>單選題</td></tr>
+            <tr><td>113年第二次</td><td>50</td><td>2分</td><td>100分</td><td>單選題</td></tr>
+            <tr><td>113年第三次</td><td>50</td><td>2分</td><td>100分</td><td>單選題</td></tr>
+            <tr><td>114年第一次</td><td>50</td><td>2分</td><td>100分</td><td>單選題</td></tr>
+            <tr><td>114年第二次</td><td>50</td><td>2分</td><td>100分</td><td>單選題</td></tr>
+            <tr><td>114年第三次</td><td>50</td><td>2分</td><td>100分</td><td>單選題</td></tr>
+            <tr><td>115年第一次</td><td>50</td><td>2分</td><td>100分</td><td>單選題</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 科目分布 -->
+  <section id="distribution">
+    <h2 class="section-title">科目分布比例</h2>
+    <div class="card">
+      <div class="donut-summary">
+        <svg class="donut-svg" viewBox="0 0 180 180">
+          <circle cx="90" cy="90" r="70" fill="none" stroke="#f0e0d5" stroke-width="28"/>
+          <circle cx="90" cy="90" r="70" fill="none" stroke="#BF360C" stroke-width="28"
+            stroke-dasharray="242 198" stroke-dashoffset="110" stroke-linecap="round"/>
+          <circle cx="90" cy="90" r="70" fill="none" stroke="#FF7043" stroke-width="28"
+            stroke-dasharray="198 242" stroke-dashoffset="-132" stroke-linecap="round"/>
+          <text x="90" y="85" text-anchor="middle" font-size="18" font-weight="700" fill="#BF360C">55:45</text>
+          <text x="90" y="104" text-anchor="middle" font-size="11" fill="#999">產科 : 兒科</text>
+        </svg>
+        <div class="donut-legend">
+          <div class="legend-item">
+            <div class="legend-dot" style="background:#BF360C;"></div>
+            <div><strong>產科護理學</strong> ── 約400題（55%）</div>
+          </div>
+          <div class="legend-item" style="margin-top:4px;">
+            <div class="legend-dot" style="background:#FF7043;"></div>
+            <div><strong>兒科護理學</strong> ── 約320題（45%）</div>
+          </div>
+          <div style="margin-top:16px;padding:12px 16px;background:var(--light-bg);border-radius:6px;font-size:13px;">
+            <strong>趨勢觀察：</strong>產科題數佔比略高於兒科，但近期兒科早產兒照護、母乳哺育相關題目有增加趨勢。考生兩大領域皆不可偏廢。
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 產科主題分析 -->
+  <section id="obs-topics">
+    <h2 class="section-title">產科護理學 ── 主題分析</h2>
+    <p class="section-desc">產科護理學涵蓋妊娠、分娩、產後、母乳哺育、高危險妊娠及婦科護理等範疇，約佔全科55%題數。以下依出題頻率排序分析各主題。</p>
+
+    <div class="card">
+      <div class="card-title">產科各主題出題統計 <span class="badge">8大主題</span></div>
+      <div class="overflow-x">
+        <table>
+          <thead>
+            <tr>
+              <th>主題</th>
+              <th>題數</th>
+              <th>佔比</th>
+              <th style="width:160px;">頻率指標</th>
+              <th>趨勢</th>
+              <th>必考指數</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>妊娠期生理變化與護理</strong></td>
+              <td>~85</td>
+              <td>11.8%</td>
+              <td><div class="pbar-wrap"><div class="pbar" style="width:100%;"></div></div></td>
+              <td><span class="tag tag-stable">穩定</span></td>
+              <td><span class="stars">★★★★★</span></td>
+            </tr>
+            <tr>
+              <td><strong>分娩期護理</strong><br><small style="color:#999;">產程/胎心音監測/麻醉</small></td>
+              <td>~70</td>
+              <td>9.7%</td>
+              <td><div class="pbar-wrap"><div class="pbar" style="width:82%;"></div></div></td>
+              <td><span class="tag tag-stable">穩定</span></td>
+              <td><span class="stars">★★★★★</span></td>
+            </tr>
+            <tr>
+              <td><strong>產後護理與復舊</strong></td>
+              <td>~55</td>
+              <td>7.6%</td>
+              <td><div class="pbar-wrap"><div class="pbar" style="width:65%;"></div></div></td>
+              <td><span class="tag tag-stable">穩定</span></td>
+              <td><span class="stars">★★★★★</span></td>
+            </tr>
+            <tr>
+              <td><strong>新生兒評估與照護</strong></td>
+              <td>~48</td>
+              <td>6.7%</td>
+              <td><div class="pbar-wrap"><div class="pbar" style="width:56%;"></div></div></td>
+              <td><span class="tag tag-up">微增</span></td>
+              <td><span class="stars">★★★★★</span></td>
+            </tr>
+            <tr>
+              <td><strong>高危險妊娠</strong><br><small style="color:#999;">GDM/子癇前症/前置胎盤</small></td>
+              <td>~45</td>
+              <td>6.3%</td>
+              <td><div class="pbar-wrap"><div class="pbar" style="width:53%;"></div></div></td>
+              <td><span class="tag tag-stable">穩定</span></td>
+              <td><span class="stars">★★★★★</span></td>
+            </tr>
+            <tr>
+              <td><strong>母乳哺育</strong></td>
+              <td>~40</td>
+              <td>5.6%</td>
+              <td><div class="pbar-wrap"><div class="pbar" style="width:47%;"></div></div></td>
+              <td><span class="tag tag-hot">增加</span></td>
+              <td><span class="stars">★★★★☆</span></td>
+            </tr>
+            <tr>
+              <td><strong>婦科護理</strong><br><small style="color:#999;">婦癌/STI/避孕/不孕</small></td>
+              <td>~35</td>
+              <td>4.9%</td>
+              <td><div class="pbar-wrap"><div class="pbar" style="width:41%;"></div></div></td>
+              <td><span class="tag tag-stable">穩定</span></td>
+              <td><span class="stars">★★★★☆</span></td>
+            </tr>
+            <tr>
+              <td><strong>生命統計</strong></td>
+              <td>~12</td>
+              <td>1.7%</td>
+              <td><div class="pbar-wrap"><div class="pbar" style="width:14%;"></div></div></td>
+              <td><span class="tag tag-stable">穩定</span></td>
+              <td><span class="stars">★★★☆☆</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <strong>重點提示：</strong>妊娠期生理變化與護理為產科出題之冠，幾乎每屆必考7-8題。分娩期護理（尤其胎心率判讀）與高危險妊娠為高分關鍵，三大主題合計佔產科近70%題數。母乳哺育近年出題明顯增加，須特別留意。
+    </div>
+  </section>
+
+  <!-- 產科必考重點 -->
+  <section id="obs-must">
+    <h2 class="section-title">產科必考重點清單</h2>
+    <p class="section-desc">以下彙整12屆考古題中，產科護理學反覆出現的核心考點，建議逐項確認是否已完全掌握。</p>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">妊娠期與產前照護</div>
+        <ul class="checklist">
+          <li>妊娠期各系統生理變化（心血管：心輸出量增加30-50%、泌尿：GFR增加50%、內分泌：hCG/hPL/黃體素/雌激素變化、血液：生理性貧血）</li>
+          <li>產前檢查項目與時程（唐氏症篩檢：第一孕期11-13w+6、第二孕期15-20w；GBS篩檢35-37w；妊娠糖尿病篩檢24-28w）</li>
+          <li>孕期營養需求（第二孕期+300kcal/日、第三孕期+300kcal/日；葉酸400-800mcg、鐵30-60mg、鈣1000mg、B12 2.6mcg）</li>
+          <li>胎兒監測（NST判讀：反應型＝20分鐘內≥2次加速，加速幅度≥15bpm持續≥15秒；胎動計數：2小時≥10次）</li>
+          <li>真假陣痛鑑別（真陣痛：規則漸強、腰→腹放射、子宮頸變薄擴張；假陣痛：不規則、腹部、走動減緩、子宮頸無變化）</li>
+          <li>超音波檢查（BPD/FL估算週數與體重、羊水指數AFI正常5-24cm）</li>
+          <li>絨毛膜取樣 vs 羊膜穿刺的時機與風險比較</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">分娩期護理</div>
+        <ul class="checklist">
+          <li>產程四個階段特徵與護理（第一產程：潛伏期0-3cm/活動期4-7cm/過渡期8-10cm；第二產程：全開至胎兒娩出；第三產程：胎盤娩出；第四產程：產後1-4小時恢復期）</li>
+          <li>胎心率型態判讀（基線正常110-160bpm；早發減速＝胎頭受壓/鏡像；晚發減速＝胎盤功能不全/須處置；變異性減速＝臍帶受壓）</li>
+          <li>待產麻醉（硬膜外麻醉：L3-L4或L4-L5、適用活動期子宮頸≥4cm、併發症含低血壓/頭痛/尿滯留、護理重點：預先輸液500-1000mL）</li>
+          <li>催產素（Oxytocin/Pitocin）使用注意事項（靜脈幫浦嚴格控速、監測胎心率與宮縮頻率、過度刺激＝宮縮>5次/10min→停藥側臥給氧）</li>
+          <li>Bishop計分法評估子宮頸成熟度（五項：位置/軟硬度/消除/擴張/先露站；≥8分利於引產）</li>
+          <li>會陰撕裂傷分度（一度：皮膚黏膜；二度：筋膜肌肉；三度：肛門括約肌；四度：直腸黏膜）</li>
+          <li>胎位不正處理（臀位/橫位評估、外轉術適應症、剖腹產適應症）</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">產後護理</div>
+        <ul class="checklist">
+          <li>產後子宮復舊評估（產後立即：臍下一指；每日下降一指/1cm；10-14天降入骨盆腔觸不到；膀胱漲滿使子宮偏移→排空膀胱）</li>
+          <li>惡露三階段（紅惡露1-3天：鮮紅含血塊；漿液性惡露4-10天：粉紅棕色；白惡露11天-3-6週：黃白色無味）</li>
+          <li>魯賓（Rubin）產後心理適應三期（接受期Taking-in 1-2天→緊執期Taking-hold 3-10天→釋放期Letting-go 10天後）</li>
+          <li>產後情緒障礙三層級（產後情緒低落Baby blues：3-5天、70-80%、自限；產後憂鬱症PPD：2週-1年、10-15%、需治療；產後精神病：0.1-0.2%、精神科急症）</li>
+          <li>產後出血定義與處置（24h內失血>500mL陰產/>1000mL剖產；原因4T：Tone/Tissue/Trauma/Thrombin）</li>
+          <li>剖腹產後護理（翻身/下床時程、傷口評估、血栓預防、母乳哺育支持）</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">母乳哺育與新生兒</div>
+        <ul class="checklist">
+          <li>母乳哺育（初乳特性：量少/高蛋白/高IgA/瀉劑助排胎便；含乳技巧：嘴巴張大/下巴貼乳房/覆蓋多數乳暈；泌乳機轉：催產素射乳反射+泌乳素泌乳）</li>
+          <li>泌乳無月經避孕法（LAM）三要件（產後<6個月+全母乳+月經未恢復）</li>
+          <li>乳腺炎處置（持續哺乳/從患側先餵/溫敷/必要時抗生素/區分乳腺炎vs乳房膿瘍）</li>
+          <li>新生兒Apgar評分（五項：心跳Heart rate/呼吸Respiratory effort/肌力Muscle tone/反射Reflex irritability/膚色Color；1分鐘&5分鐘評分）</li>
+          <li>New Ballard Score新生兒成熟度評估（神經肌肉成熟度+身體成熟度，估算週數20-44週）</li>
+          <li>新生兒反射（擁抱Moro 3-6月消失/抓握Grasp 3-4月/巴賓斯基Babinski 12-18月/踏步Stepping 3-4月/尋乳Rooting 3-4月/吸吮Sucking 10-12月）</li>
+          <li>新生兒體溫維持（四種散熱途徑：傳導/對流/輻射/蒸發→擦乾、溫暖毯、輻射保溫台、皮膚接觸）</li>
+          <li>新生兒篩檢（出生48小時後/≥24h採血、足跟外側、21項先天代謝異常篩檢）</li>
+          <li>Rh血型不合與RhoGAM注射（母Rh-/胎Rh+、注射時機：產後72小時內、產前28週、流產後）</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">高危險妊娠</div>
+        <ul class="checklist">
+          <li>子癇前症/子癇症（輕度：BP≥140/90+蛋白尿；重度：BP≥160/110+器官損傷；MgSO4治療監測：膝反射、呼吸≥16/min、尿量≥30mL/hr；解毒劑：Calcium gluconate）</li>
+          <li>HELLP症候群（Hemolysis溶血/Elevated Liver enzymes肝酵素升高/Low Platelets血小板<100,000）</li>
+          <li>前置胎盤 vs 胎盤早期剝離鑑別（前置：無痛鮮紅出血/子宮軟/胎心正常；剝離：疼痛暗紅出血/子宮硬如板/胎心窘迫/DIC風險）</li>
+          <li>妊娠糖尿病GDM（篩檢24-28週OGTT、hPL造成胰島素阻抗、巨嬰/新生兒低血糖/RDS風險、產後6-12週追蹤75g OGTT）</li>
+          <li>子宮外孕（腹痛/陰道出血/Cullen sign、β-hCG未正常上升、破裂急症處置）</li>
+          <li>早期破水PROM（石蕊試紙鹼性→藍色、羊齒狀結晶、感染監測、足月vs早產處置不同）</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">婦科護理與避孕</div>
+        <ul class="checklist">
+          <li>各種避孕方法比較（口服避孕藥OCP：忘記吃的補救措施；迷你丸：僅含黃體素/哺乳期可用；IUD：銅或含荷爾蒙/放置時機/注意事項；Depo-Provera：每3月注射/骨密度影響）</li>
+          <li>子宮頸癌篩檢（Pap smear+HPV檢測、30歲以上每年抹片、HPV疫苗適用年齡）</li>
+          <li>性傳染疾病（淋病/披衣菌/梅毒/HPV/HSV的症狀、治療與護理）</li>
+          <li>不孕症評估與處理（基礎體溫/荷爾蒙檢測/HSG/精液分析/人工生殖技術IVF）</li>
+          <li>生命統計相關定義（新生兒死亡率/嬰兒死亡率/周產期死亡率/孕產婦死亡率的計算公式）</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 兒科主題分析 -->
+  <section id="ped-topics">
+    <h2 class="section-title">兒科護理學 ── 主題分析</h2>
+    <p class="section-desc">兒科護理學涵蓋兒童生長發展、呼吸/心血管/血液/腸胃/神經/骨骼肌肉/內分泌/泌尿等系統疾病，以及早產兒照護、傳染病、兒童安全等議題，約佔全科45%題數。</p>
+
+    <div class="card">
+      <div class="card-title">兒科各主題出題統計 <span class="badge">14大主題</span></div>
+      <div class="overflow-x">
+        <table>
+          <thead>
+            <tr>
+              <th>主題</th>
+              <th>題數</th>
+              <th>佔比</th>
+              <th style="width:140px;">頻率指標</th>
+              <th>趨勢</th>
+              <th>必考指數</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>兒童生長發展與評估</strong></td>
+              <td>~35</td>
+              <td>4.9%</td>
+              <td><div class="pbar-wrap"><div class="pbar" style="width:100%;"></div></div></td>
+              <td><span class="tag tag-stable">穩定</span></td>
+              <td><span class="stars">★★★★☆</span></td>
+            </tr>
+            <tr>
+              <td><strong>心血管系統/先天性心臟病</strong></td>
+              <td>~28</td>
+              <td>3.9%</td>
+              <td><div class="pbar-wrap"><div class="pbar" style="width:80%;"></div></div></td>
+              <td><span class="tag tag-stable">穩定</span></td>
+              <td><span class="stars">★★★★★</span></td>
+            </tr>
+            <tr>
+              <td><strong>血液腫瘤疾病</strong></td>
+              <td>~28</td>
+              <td>3.9%</td>
+              <td><div class="pbar-wrap"><div class="pbar" style="width:80%;"></div></div></td>
+              <td><span class="tag tag-stable">穩定</span></td>
+              <td><span class="stars">★★★★★</span></td>
+            </tr>
+            <tr>
+              <td><strong>早產兒照護</strong></td>
+              <td>~28</td>
+              <td>3.9%</td>
+              <td><div class="pbar-wrap"><div class="pbar" style="width:80%;"></div></div></td>
+              <td><span class="tag tag-hot">增加</span></td>
+              <td><span class="stars">★★★★★</span></td>
+            </tr>
+            <tr>
+              <td><strong>呼吸系統疾病</strong></td>
+              <td>~28</td>
+              <td>3.9%</td>
+              <td><div class="pbar-wrap"><div class="pbar" style="width:80%;"></div></div></td>
+              <td><span class="tag tag-stable">穩定</span></td>
+              <td><span class="stars">★★★★☆</span></td>
+            </tr>
+            <tr>
+              <td><strong>以家庭為中心照護/兒童安全/虐待</strong></td>
+              <td>~25</td>
+              <td>3.5%</td>
+              <td><div class="pbar-wrap"><div class="pbar" style="width:71%;"></div></div></td>
+              <td><span class="tag tag-stable">穩定</span></td>
+              <td><span class="stars">★★★★☆</span></td>
+            </tr>
+            <tr>
+              <td><strong>疼痛管理與用藥</strong></td>
+              <td>~25</td>
+              <td>3.5%</td>
+              <td><div class="pbar-wrap"><div class="pbar" style="width:71%;"></div></div></td>
+              <td><span class="tag tag-up">微增</span></td>
+              <td><span class="stars">★★★★☆</span></td>
+            </tr>
+            <tr>
+              <td><strong>傳染病/免疫/疫苗</strong></td>
+              <td>~25</td>
+              <td>3.5%</td>
+              <td><div class="pbar-wrap"><div class="pbar" style="width:71%;"></div></div></td>
+              <td><span class="tag tag-stable">穩定</span></td>
+              <td><span class="stars">★★★★☆</span></td>
+            </tr>
+            <tr>
+              <td><strong>腸胃系統疾病</strong></td>
+              <td>~22</td>
+              <td>3.1%</td>
+              <td><div class="pbar-wrap"><div class="pbar" style="width:63%;"></div></div></td>
+              <td><span class="tag tag-stable">穩定</span></td>
+              <td><span class="stars">★★★★☆</span></td>
+            </tr>
+            <tr>
+              <td><strong>神經系統疾病</strong></td>
+              <td>~22</td>
+              <td>3.1%</td>
+              <td><div class="pbar-wrap"><div class="pbar" style="width:63%;"></div></div></td>
+              <td><span class="tag tag-stable">穩定</span></td>
+              <td><span class="stars">★★★★☆</span></td>
+            </tr>
+            <tr>
+              <td><strong>內分泌代謝/新生兒篩檢</strong></td>
+              <td>~20</td>
+              <td>2.8%</td>
+              <td><div class="pbar-wrap"><div class="pbar" style="width:57%;"></div></div></td>
+              <td><span class="tag tag-stable">穩定</span></td>
+              <td><span class="stars">★★★★☆</span></td>
+            </tr>
+            <tr>
+              <td><strong>泌尿腎臟系統</strong></td>
+              <td>~18</td>
+              <td>2.5%</td>
+              <td><div class="pbar-wrap"><div class="pbar" style="width:51%;"></div></div></td>
+              <td><span class="tag tag-stable">穩定</span></td>
+              <td><span class="stars">★★★☆☆</span></td>
+            </tr>
+            <tr>
+              <td><strong>骨骼肌肉系統</strong></td>
+              <td>~18</td>
+              <td>2.5%</td>
+              <td><div class="pbar-wrap"><div class="pbar" style="width:51%;"></div></div></td>
+              <td><span class="tag tag-stable">穩定</span></td>
+              <td><span class="stars">★★★☆☆</span></td>
+            </tr>
+            <tr>
+              <td><strong>兒童心理/瀕死/慢性病</strong></td>
+              <td>~18</td>
+              <td>2.5%</td>
+              <td><div class="pbar-wrap"><div class="pbar" style="width:51%;"></div></div></td>
+              <td><span class="tag tag-stable">穩定</span></td>
+              <td><span class="stars">★★★☆☆</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <strong>重點提示：</strong>兒科出題分布較產科均勻，但先天性心臟病、血液腫瘤疾病與早產兒照護為三大必考核心。早產兒照護近年出題量明顯增加，尤其發展性照護（袋鼠護理、築巢）與RDS/NEC為熱門考點。
+    </div>
+  </section>
+
+  <!-- 兒科必考重點 -->
+  <section id="ped-must">
+    <h2 class="section-title">兒科必考重點清單</h2>
+    <p class="section-desc">以下彙整12屆考古題中，兒科護理學反覆出現的核心考點，涵蓋各系統疾病及兒童照護議題。</p>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">生長發展與基礎照護</div>
+        <ul class="checklist">
+          <li>兒童生長發展里程碑（3月抬頭/6月坐/9月爬/12月走/2歲雙字句/3歲三輪車/4歲單腳跳/5歲跳繩繫鞋帶）</li>
+          <li>氣質九向度（活動量/規律性/趨避性/適應度/反應閾/反應強度/情緒本質/注意力分散度/堅持度→三型：易養型/難養型/慢吞吞型）</li>
+          <li>遊戲發展階段（單獨遊戲→旁觀遊戲→平行遊戲2-3歲→聯合遊戲3-4歲→合作遊戲4歲以上）</li>
+          <li>分離焦慮三期（抗議期Protest→失望期Despair→去依戀期Detachment）</li>
+          <li>皮亞傑認知發展與死亡概念（感覺動作期0-2歲/前運思期2-7歲/具體運思期7-11歲/形式運思期11歲以上；學齡前：不可逆/擬人化；學齡：因果理解；青少年：抽象理解）</li>
+          <li>兒童疼痛評估工具（FLACC量表：0-7歲、臉譜量表Wong-Baker FACES：3歲以上、數字量表NRS：7歲以上、CRIES量表：新生兒）</li>
+          <li>以家庭為中心照護/賦權empowerment（尊重/資訊分享/參與/合作；兒童知情同意與家長同意的年齡界定）</li>
+          <li>兒童虐待評估（不一致的傷害解釋、特殊傷害型態如燙傷界線清楚/螺旋骨折、通報責任24小時內）</li>
+          <li>嬰兒猝死症候群SIDS預防（仰睡/硬床墊/避免枕頭軟物/不同床/保持通風/奶嘴降風險/避免過熱）</li>
+          <li>兒童急救CPR（嬰兒：檢查肱動脈、壓胸深度胸廓1/3約4cm、30:2單人/15:2雙人、壓胸位置兩乳頭連線下方一指處）</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">心血管系統</div>
+        <ul class="checklist">
+          <li>法洛氏四重症TOF（四缺陷：VSD+肺動脈狹窄+主動脈跨位+右心室肥大；發紺型心臟病最常見；缺氧發作處置：膝胸臥位knee-chest→增加SVR→減少右到左分流；PGE1維持動脈導管→暫時緩解）</li>
+          <li>心室中膈缺損VSD（最常見先天性心臟病；左到右分流→肺血流增加→充血性心衰竭CHF；小缺損可能自行關閉）</li>
+          <li>主動脈狹窄COA（上肢血壓高於下肢>20mmHg、股動脈脈搏減弱或消失、嚴重者新生兒期PGE1）</li>
+          <li>大血管轉位TGA（主動脈接右心室/肺動脈接左心室→平行循環→嚴重發紺；PGE1維持PDA開放→BAS心房中隔氣球擴張術→Jatene手術）</li>
+          <li>毛地黃Digoxin用藥護理（服藥前測心尖脈1分鐘、嬰兒<100bpm/兒童<70bpm暫停用藥、中毒徵兆：噁心嘔吐心律不整視覺改變、勿與鈣併用）</li>
+          <li>充血性心衰竭CHF（餵食困難/盜汗/生長遲滯/肝脾腫大→Digoxin+利尿劑+限鈉+半坐臥）</li>
+          <li>川崎氏症Kawasaki Disease（診斷標準：發燒≥5天+4/5症狀；治療IVIG 2g/kg+高劑量Aspirin→退燒改低劑量；冠狀動脈瘤追蹤心臟超音波；IVIG後活性疫苗延後11個月）</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">血液腫瘤疾病</div>
+        <ul class="checklist">
+          <li>缺鐵性貧血（好發6-24月齡；鐵劑+Vit C促進吸收、兩餐間空腹服用、Z字型注射肌肉注射、黑便為正常反應、勿配牛奶/茶/制酸劑服用）</li>
+          <li>海洋性貧血Thalassemia（MCV<80fL篩檢、重型需定期輸血、排鐵劑deferoxamine皮下注射8-10小時、監測鐵蛋白ferritin、脾臟切除適應症）</li>
+          <li>血友病Hemophilia（X性聯隱性遺傳→主要影響男性；關節出血hemarthrosis最常見；補充凝血因子VIII(A型)/IX(B型)；避免Aspirin/NSAID、禁肌肉注射、避免碰撞活動）</li>
+          <li>急性淋巴性白血病ALL（兒童最常見癌症；ANC計算：WBC×(Seg%+Band%)、ANC<500嚴重嗜中性球低下→保護性隔離；化療副作用：口腔黏膜炎/噁心嘔吐/感染/出血；腫瘤溶解症候群TLS：高尿酸/高鉀/高磷/低鈣→水化+Allopurinol）</li>
+          <li>特發性血小板低下紫斑症ITP（皮膚紫斑/瘀青/鼻出血；免疫球蛋白+類固醇治療；避免碰撞/用軟毛牙刷）</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">早產兒照護</div>
+        <ul class="checklist">
+          <li>早產兒呼吸窘迫症候群RDS（第二型肺泡細胞surfactant表面張力素不足→肺泡塌陷；胸骨凹陷/鼻翼搧動/呻吟；治療：exogenous surfactant+CPAP壓力4-8 cmH2O+氧氣；L/S ratio<2:1表示肺不成熟）</li>
+          <li>壞死性腸炎NEC（早產兒腸道缺血+感染+餵食→腸壁壞死；腹脹/血便/膽汁性嘔吐/X光腸壁氣囊；處置：禁食NPO+TPN+NG減壓+抗生素；Bell分期）</li>
+          <li>早產兒發展性照護（袋鼠護理Kangaroo Care：皮膚對皮膚接觸≥1hr、築巢Nesting：模擬子宮環境、減少光線噪音刺激、集中照護Clustering Care減少打擾、促進睡眠-覺醒週期）</li>
+          <li>新生兒高膽紅素血症（生理性黃疸：出生2-3天出現5-7天高峰；病理性：24h內出現/Bilirubin>12.9mg/dL；照光治療：保護眼罩、距離30-45cm、維持體溫、增加餵食、Q2h翻身、監測體溫脫水）</li>
+          <li>早產兒視網膜病變ROP（高濃度氧氣→視網膜血管增生→失明風險；矯正年齡追蹤眼底檢查；氧濃度監測SpO2 88-95%）</li>
+          <li>早產兒貧血（紅血球壽命短/造血功能未成熟/醫療性失血；補充鐵劑+EPO；輸血適應症）</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">呼吸系統與傳染病</div>
+        <ul class="checklist">
+          <li>哮吼Croup（病毒性喉氣管支氣管炎；犬吠式咳嗽barking cough/吸氣性喘鳴stridor；涼霧氣/racemic epinephrine/Dexamethasone）</li>
+          <li>急性會厭炎Epiglottitis（H. influenzae type b；突發高燒/吞嚥困難/流口水/三腳架姿勢tripod position；禁壓舌板檢查→可能誘發完全阻塞；緊急插管準備）</li>
+          <li>細支氣管炎Bronchiolitis（RSV最常見；<2歲；呼氣性哮鳴wheeze；Palivizumab預防高危險群；支持療法為主）</li>
+          <li>氣喘Asthma（可逆性氣道阻塞；MDI+Spacer使用/PEFR監測/紅黃綠燈計畫；急性發作：SABA→Ipratropium→Systemic steroid；長期控制：ICS+LABA）</li>
+          <li>傳染病隔離與臨床表徵（玫瑰疹Roseola：退燒後出疹、腮腺炎Mumps：無菌性腦膜炎/睪丸炎併發症、水痘：向心性分布各期並存、麻疹：Koplik spots→紅疹由頭向下、百日咳：陣發性咳嗽+雞啼聲whoop）</li>
+          <li>腸病毒預防與照護（含氯漂白水500ppm消毒→非酒精；手足口病/疱疹性咽峽炎；重症前兆：嗜睡/持續嘔吐/肌躍型抽搐/心跳加速/呼吸急促）</li>
+          <li>疫苗接種時程（出生BCG+HepB、2月五合一/PCV/ROTA、12月MMR/水痘/JE、2-3歲JE追加、活性疫苗間隔≥28天）</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">腸胃與內分泌系統</div>
+        <ul class="checklist">
+          <li>先天性巨結腸症Hirschsprung（無神經節→腸蠕動障礙→功能性阻塞；延遲排胎便>24-48h/腹脹/膨脹便秘；鋇劑灌腸見移行帶/直腸切片確診；灌腸護理→暫時性結腸造廔→確定手術Pull-through）</li>
+          <li>腸套疊Intussusception（3月-3歲好發；陣發性劇烈哭鬧→安靜→再發作；草莓果醬便currant jelly stool/右上腹臘腸狀腫塊sausage-shaped mass；鋇劑/空氣灌腸復位；復位失敗→手術）</li>
+          <li>幽門狹窄Pyloric Stenosis（出生後2-4週；噴射狀嘔吐projectile vomiting→不含膽汁；右上腹橄欖狀腫塊olive-shaped mass/胃蠕動波；低氯性代謝性鹼中毒；Ramstedt手術pyloromyotomy→術後由少量漸增餵食）</li>
+          <li>唇腭裂Cleft Lip/Palate（術前餵食：特殊奶嘴/匙餵/直立姿勢/少量多次；唇裂術後：Logan bow保護傷口/肘部約束/避免吸吮哭鬧；腭裂術後：俯臥或側臥/紙杯餵食/禁止吸管及硬物）</li>
+          <li>膽道閉鎖Biliary Atresia（灰白便acholic stool/暗茶色尿/進行性黃疸/肝脾腫大；Kasai手術≤60天預後較好；術後脂溶性維生素ADEK補充/膽汁引流監測/肝移植評估）</li>
+          <li>第一型糖尿病Type 1 DM（自體免疫破壞胰島β細胞；胰島素注射：部位輪替/皮下注射/速效Regular+中效NPH混合→先抽清再抽濁；運動前加餐/低血糖處置：意識清醒→15g醣類/意識不清→Glucagon IM）</li>
+          <li>先天性甲狀腺功能低下Congenital Hypothyroidism（T4低/TSH高；新生兒篩檢早期發現；症狀：黃疸延長/便秘/舌大/臍疝氣/生長遲滯/智能不足；Levothyroxine終生治療、空腹服用）</li>
+          <li>苯酮尿症PKU（Phenylalanine hydroxylase缺乏→Phe堆積→腦損傷；低苯丙胺酸飲食/避免阿斯巴甜；可用母乳搭配特殊配方→母乳並非禁忌（考試常設陷阱）；尿液霉臭味musty odor）</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">神經與骨骼肌肉系統</div>
+        <ul class="checklist">
+          <li>顱內壓升高IICP（嬰兒：前囟門膨隆/縫裂開/頭圍增大/落日眼；兒童：頭痛/嘔吐/視乳頭水腫/意識改變；護理：床頭抬高30度/頭部維持中線/避免Valsalva動作/限水/Mannitol降壓）</li>
+          <li>細菌性 vs 病毒性腦膜炎CSF差異（細菌：混濁/WBC高以嗜中性球為主/蛋白質高/糖低/培養陽性；病毒：清澈/WBC中度升高以淋巴球為主/蛋白質正常偏高/糖正常/培養陰性）</li>
+          <li>熱性痙攣Febrile Seizure（6月-5歲/體溫快速上升時發生；發作時護理：側臥維持呼吸道通暢/不塞壓舌板/不約束肢體/記錄發作時間型態；單純型<15min→預後好）</li>
+          <li>癲癇Epilepsy用藥護理（Phenytoin/Dilantin：牙齦增生→口腔護理/勿驟停藥；Valproic acid/Depakine：監測血中濃度+肝功能/致畸性；生酮飲食：高脂低醣/減少發作頻率）</li>
+          <li>腦性麻痺Cerebral Palsy（非進行性腦損傷→動作障礙；痙攣型spastic最常見占70-80%；餵食困難→半坐臥位/增稠食物/小口緩慢餵食；復健目標：最大功能獨立）</li>
+          <li>水腦症Hydrocephalus（VP shunt引流；監測IICP徵象/shunt功能/感染徵兆；泵浦按壓評估通暢度）</li>
+          <li>發展性髖關節發育不良DDH（Ortolani test：外展聽到click/Barlow test：可脫位感；治療：Pavlik harness吊帶維持屈曲外展/3-6月最有效；嚴重者人字形石膏spica cast→監測神經血管功能/花瓣型修邊防汙染）</li>
+          <li>脊柱側彎Scoliosis（Cobb角>10度確診；背架Brace治療：穿著23小時/日至骨骼成熟Risser sign 4-5；>40-50度手術矯正→Harrington rod）</li>
+          <li>裘馨氏肌失養症DMD（X性聯隱性遺傳→男性罹病；Gower's sign：由地面起立時手撐膝→撐地→爬身而起；假性肥大pseudohypertrophy腓腸肌；CK顯著升高；漸進性肌無力→輪椅→呼吸衰竭）</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">泌尿系統與其他</div>
+        <ul class="checklist">
+          <li>泌尿道感染UTI（女嬰好發；嬰兒症狀不典型：發燒/餵食困難/躁動；清潔中段尿培養確診；VUR膀胱輸尿管逆流→VCUG檢查→預防性抗生素）</li>
+          <li>腎病症候群Nephrotic Syndrome（大量蛋白尿>3.5g/日/低白蛋白血症/水腫/高脂血症；微小病變型最常見→Prednisolone類固醇治療有效；護理：監測體重尿量/限鈉不嚴格限水/皮膚護理/感染預防）</li>
+          <li>急性腎絲球腎炎AGN（A群β溶血性鏈球菌感染後1-3週；血尿茶色尿/水腫/高血壓/少尿；ASO抗體升高/C3補體下降；限鈉限鉀限水/臥床休息/抗生素治療殘留感染）</li>
+          <li>隱睪症Cryptorchidism（睪丸未降入陰囊；1歲前可能自行下降；hCG刺激試驗；Orchiopexy蘭花固定術建議1歲前完成→降低不孕與惡性腫瘤風險）</li>
+          <li>尿道下裂Hypospadias（尿道口位於陰莖腹側；禁止包皮環切術→保留包皮做手術修補用；術後支架導尿管照護/雙層尿布觀察）</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 難易度分析 -->
+  <section id="difficulty">
+    <h2 class="section-title">難易度分析與出題趨勢</h2>
+
+    <div class="card">
+      <div class="card-title">近年出題趨勢觀察</div>
+      <div class="overflow-x">
+        <table>
+          <thead>
+            <tr>
+              <th>趨勢方向</th>
+              <th>說明</th>
+              <th>影響主題</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="tag tag-hot">題數增加</span></td>
+              <td>母乳哺育與早產兒照護出題頻率明顯上升，反映臨床實務重視度提高</td>
+              <td>母乳哺育、早產兒發展性照護、袋鼠護理</td>
+            </tr>
+            <tr>
+              <td><span class="tag tag-up">微增</span></td>
+              <td>新生兒評估與兒童疼痛管理出題略增</td>
+              <td>新生兒評估、FLACC量表、非藥物疼痛管理</td>
+            </tr>
+            <tr>
+              <td><span class="tag tag-stable">穩定</span></td>
+              <td>傳統核心考點維持穩定出題量，為基本盤</td>
+              <td>產程護理、胎心率判讀、先天性心臟病、ALL</td>
+            </tr>
+            <tr>
+              <td style="font-weight:700;color:var(--primary);">情境題增加</td>
+              <td>50題制後臨床情境題比例升高，題幹更長，需整合判斷</td>
+              <td>全面性影響</td>
+            </tr>
+            <tr>
+              <td style="font-weight:700;color:var(--primary);">跨領域整合</td>
+              <td>單題結合產科+新生兒或兒科+用藥的整合型考題增加</td>
+              <td>高危險妊娠→新生兒照護、藥物計算</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top:18px;">
+      <div class="card">
+        <div class="card-title">難度分布估計</div>
+        <div style="margin-bottom:12px;">
+          <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px;">
+            <span>基礎記憶題（容易）</span><span style="font-weight:700;color:var(--primary);">~25%</span>
+          </div>
+          <div class="pbar-wrap" style="height:14px;"><div class="pbar" style="width:25%;background:#4CAF50;"></div></div>
+        </div>
+        <div style="margin-bottom:12px;">
+          <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px;">
+            <span>理解應用題（中等）</span><span style="font-weight:700;color:var(--primary);">~50%</span>
+          </div>
+          <div class="pbar-wrap" style="height:14px;"><div class="pbar" style="width:50%;background:#FF9800;"></div></div>
+        </div>
+        <div style="margin-bottom:12px;">
+          <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px;">
+            <span>臨床情境分析題（偏難）</span><span style="font-weight:700;color:var(--primary);">~20%</span>
+          </div>
+          <div class="pbar-wrap" style="height:14px;"><div class="pbar" style="width:20%;background:#F44336;"></div></div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px;">
+            <span>整合判斷題（困難）</span><span style="font-weight:700;color:var(--primary);">~5%</span>
+          </div>
+          <div class="pbar-wrap" style="height:14px;"><div class="pbar" style="width:5%;background:#880E4F;"></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">得分策略建議</div>
+        <ul class="checklist">
+          <li><strong>先搶基本分（25%）：</strong>熟記生理數值、發展里程碑、藥物名稱等純記憶內容</li>
+          <li><strong>穩拿應用題（50%）：</strong>理解病理機轉並能應用於護理措施的判斷</li>
+          <li><strong>挑戰情境題（20%）：</strong>多做考古題培養臨床情境判斷能力</li>
+          <li><strong>放對心態面對難題（5%）：</strong>少數整合題可利用刪去法提高正確率</li>
+          <li><strong>目標：</strong>掌握前75%題型即可穩定及格，挑戰情境題是高分關鍵</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 應考策略 -->
+  <section id="strategy">
+    <h2 class="section-title">應考策略與技巧</h2>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">產科應試重點策略</div>
+        <ul class="checklist">
+          <li><strong>妊娠期：</strong>各孕期生理變化用表格比較記憶，特別注意血液、心血管、內分泌系統的數值變化</li>
+          <li><strong>分娩期：</strong>胎心率圖形判讀是必考題型，務必能區分早發/晚發/變異性減速及對應處置</li>
+          <li><strong>產後期：</strong>復舊時間軸（子宮底高度、惡露變化）以時間為主軸記憶</li>
+          <li><strong>高危險妊娠：</strong>子癇前症MgSO4三項監測（膝反射/呼吸/尿量）幾乎每屆必考</li>
+          <li><strong>鑑別比較：</strong>前置胎盤vs胎盤早期剝離、真假陣痛、產後情緒三層級必須能清楚對照</li>
+          <li><strong>母乳哺育：</strong>近年出題增加，泌乳機轉、含乳評估、乳腺炎處置均須熟悉</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">兒科應試重點策略</div>
+        <ul class="checklist">
+          <li><strong>發展里程碑：</strong>以3個月為一單位記憶動作/語言/社會發展，搭配遊戲型態</li>
+          <li><strong>先天性心臟病：</strong>發紺型vs非發紺型分類、血流方向（左→右/右→左）是核心概念</li>
+          <li><strong>血液腫瘤：</strong>ALL化療的ANC計算、保護性隔離標準每屆必考</li>
+          <li><strong>早產兒：</strong>RDS病理機轉+surfactant+CPAP為出題核心，NEC禁食原則要熟</li>
+          <li><strong>腸胃疾病：</strong>「三大嘔吐鑑別」（幽門狹窄噴射狀/腸套疊膽汁性/巨結腸延遲排便）用比較表記憶</li>
+          <li><strong>藥物護理：</strong>Digoxin心跳過慢暫停、Dilantin牙齦增生、鐵劑+VitC、排鐵劑適應症</li>
+          <li><strong>遺傳型態：</strong>X性聯隱性（血友病/DMD）、體染色體隱性（PKU/CF/SCA）要能判斷</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="highlight-box" style="margin-top:8px;">
+      <strong>考場時間分配（50題/70分鐘）：</strong>平均每題1.4分鐘。建議前40題控制在55分鐘內，保留15分鐘給需要思考的情境題與檢查。遇到不確定的題目先標記跳過，最後回頭處理。
+    </div>
+  </section>
+
+  <!-- 四週讀書計畫 -->
+  <section id="study-plan">
+    <h2 class="section-title">四週衝刺讀書計畫</h2>
+    <p class="section-desc">以每日3-4小時有效讀書時間規劃，結合課文精讀與考古題練習。每週末安排模擬測驗與弱點複習。</p>
+
+    <!-- Week 1 -->
+    <div style="margin-bottom:28px;">
+      <div class="week-header">第一週：產科基礎（妊娠期 + 分娩期）</div>
+      <div class="week-body">
+        <div class="day-row">
+          <div class="day-label">Day 1</div>
+          <div class="day-content"><strong>女性生殖系統解剖與生理</strong>｜月經週期與荷爾蒙變化、受精著床機轉、胎盤功能與荷爾蒙（hCG/hPL/Progesterone/Estrogen）</div>
+        </div>
+        <div class="day-row">
+          <div class="day-label">Day 2</div>
+          <div class="day-content"><strong>妊娠期生理變化（上）</strong>｜心血管系統（心輸出量/血壓/仰臥低血壓）、血液系統（生理性貧血/凝血因子）、呼吸系統、泌尿系統（GFR增加/生理性水腎）</div>
+        </div>
+        <div class="day-row">
+          <div class="day-label">Day 3</div>
+          <div class="day-content"><strong>妊娠期生理變化（下）+ 產前照護</strong>｜內分泌/腸胃/肌肉骨骼變化、孕期營養需求、產前檢查時程表、胎兒健康評估（NST/CST/BPP）</div>
+        </div>
+        <div class="day-row">
+          <div class="day-label">Day 4</div>
+          <div class="day-content"><strong>分娩期護理（一）</strong>｜產兆與真假陣痛鑑別、分娩機轉（銜接/下降/俯曲/內旋轉/仰伸/外旋轉/娩出）、產程四階段時間與特徵</div>
+        </div>
+        <div class="day-row">
+          <div class="day-label">Day 5</div>
+          <div class="day-content"><strong>分娩期護理（二）</strong>｜胎心率監測與判讀（基線/變異性/加速/各型減速）、待產護理措施、非藥物減痛法、硬膜外麻醉護理</div>
+        </div>
+        <div class="day-row">
+          <div class="day-label">Day 6</div>
+          <div class="day-content"><strong>分娩期護理（三）+ 複習</strong>｜催產素使用、Bishop計分、引產與催生、會陰切開與縫合、助產技術；複習本週筆記重點</div>
+        </div>
+        <div class="day-row">
+          <div class="day-label">Day 7</div>
+          <div class="day-content"><strong>模擬測驗 + 弱點複習</strong>｜練習2-3屆妊娠期+分娩期相關考古題（約30-40題），檢討錯題並整理易混淆對照表</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 2 -->
+    <div style="margin-bottom:28px;">
+      <div class="week-header">第二週：產科進階（產後 + 母乳 + 高危險妊娠 + 婦科）</div>
+      <div class="week-body">
+        <div class="day-row">
+          <div class="day-label">Day 8</div>
+          <div class="day-content"><strong>產後護理</strong>｜子宮復舊評估、惡露三階段、產後生理變化（泌乳/月經恢復/體重）、產後運動、會陰護理</div>
+        </div>
+        <div class="day-row">
+          <div class="day-label">Day 9</div>
+          <div class="day-content"><strong>產後心理適應 + 產後併發症</strong>｜Rubin三期、產後情緒障礙三層級、產後出血4T、產褥感染、深層靜脈血栓</div>
+        </div>
+        <div class="day-row">
+          <div class="day-label">Day 10</div>
+          <div class="day-content"><strong>母乳哺育</strong>｜泌乳生理機轉、初乳/成熟乳特性、正確含乳與哺乳姿勢、常見問題（乳頭痛/乳腺管阻塞/乳腺炎）、LAM避孕法</div>
+        </div>
+        <div class="day-row">
+          <div class="day-label">Day 11</div>
+          <div class="day-content"><strong>高危險妊娠（一）</strong>｜子癇前症/子癇症分類與MgSO4監測、HELLP症候群、慢性高血壓合併妊娠、妊娠糖尿病GDM篩檢與照護</div>
+        </div>
+        <div class="day-row">
+          <div class="day-label">Day 12</div>
+          <div class="day-content"><strong>高危險妊娠（二）</strong>｜前置胎盤vs胎盤早期剝離、子宮外孕、早期破水PROM/PPROM、早產安胎藥物（MgSO4/Ritodrine/Nifedipine）、多胞胎</div>
+        </div>
+        <div class="day-row">
+          <div class="day-label">Day 13</div>
+          <div class="day-content"><strong>婦科護理 + 生命統計</strong>｜各種避孕法比較、不孕症評估、子宮頸癌/子宮內膜癌/卵巢癌、STI、生命統計定義與計算</div>
+        </div>
+        <div class="day-row">
+          <div class="day-label">Day 14</div>
+          <div class="day-content"><strong>產科總模擬 + 複習</strong>｜完整產科模擬測驗（40-50題）、檢討錯題、製作產科總整理筆記與比較表</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 3 -->
+    <div style="margin-bottom:28px;">
+      <div class="week-header">第三週：兒科基礎（生長發展 + 呼吸 + 心血管 + 血液腫瘤 + 早產兒）</div>
+      <div class="week-body">
+        <div class="day-row">
+          <div class="day-label">Day 15</div>
+          <div class="day-content"><strong>兒童生長發展</strong>｜各年齡動作/語言/社會發展里程碑、氣質九向度、遊戲發展、分離焦慮三期、Piaget認知發展、Erikson心理社會發展</div>
+        </div>
+        <div class="day-row">
+          <div class="day-label">Day 16</div>
+          <div class="day-content"><strong>兒童照護基礎</strong>｜以家庭為中心照護、疼痛評估工具、用藥計算（mg/kg/dose）、兒童安全/虐待評估、住院兒童照護、SIDS預防、兒童CPR</div>
+        </div>
+        <div class="day-row">
+          <div class="day-label">Day 17</div>
+          <div class="day-content"><strong>新生兒與早產兒照護</strong>｜Apgar評分、New Ballard Score、新生兒反射、體溫維持、新生兒篩檢、高膽紅素血症照光治療、Rh不合、RDS/surfactant/CPAP</div>
+        </div>
+        <div class="day-row">
+          <div class="day-label">Day 18</div>
+          <div class="day-content"><strong>早產兒照護（續）</strong>｜NEC壞死性腸炎、發展性照護（袋鼠護理/築巢）、ROP視網膜病變、BPD支氣管肺發育不良、早產兒餵食（管灌→瓶餵→母乳親餵進程）</div>
+        </div>
+        <div class="day-row">
+          <div class="day-label">Day 19</div>
+          <div class="day-content"><strong>呼吸系統疾病</strong>｜哮吼vs急性會厭炎鑑別、細支氣管炎（RSV/Palivizumab）、氣喘（急性處置/長期控制/PEFR）、肺炎、扁桃腺切除術後護理</div>
+        </div>
+        <div class="day-row">
+          <div class="day-label">Day 20</div>
+          <div class="day-content"><strong>心血管系統</strong>｜先天性心臟病分類（發紺vs非發紺）、TOF/VSD/ASD/PDA/COA/TGA各疾病重點、Digoxin用藥、CHF護理、川崎氏症（IVIG+Aspirin）</div>
+        </div>
+        <div class="day-row">
+          <div class="day-label">Day 21</div>
+          <div class="day-content"><strong>血液腫瘤 + 模擬測驗</strong>｜缺鐵性貧血/海洋性貧血/血友病/ALL/ITP各疾病護理重點；練習兒科基礎考古題（30-40題），檢討錯題</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 4 -->
+    <div style="margin-bottom:28px;">
+      <div class="week-header">第四週：兒科進階 + 全科總複習</div>
+      <div class="week-body">
+        <div class="day-row">
+          <div class="day-label">Day 22</div>
+          <div class="day-content"><strong>內分泌代謝疾病</strong>｜第一型糖尿病（胰島素注射/低血糖處置）、先天性甲狀腺功能低下、PKU苯酮尿症、半乳糖血症、新生兒篩檢21項</div>
+        </div>
+        <div class="day-row">
+          <div class="day-label">Day 23</div>
+          <div class="day-content"><strong>腸胃系統疾病</strong>｜先天性巨結腸症/腸套疊/幽門狹窄（三大鑑別）、唇腭裂術前後護理、膽道閉鎖（Kasai手術）、GER胃食道逆流、腹瀉脫水評估</div>
+        </div>
+        <div class="day-row">
+          <div class="day-label">Day 24</div>
+          <div class="day-content"><strong>神經系統疾病</strong>｜IICP評估與護理、細菌vs病毒性腦膜炎CSF比較、熱性痙攣、癲癇用藥、腦性麻痺、水腦症VP shunt、脊柱裂</div>
+        </div>
+        <div class="day-row">
+          <div class="day-label">Day 25</div>
+          <div class="day-content"><strong>骨骼肌肉+泌尿+傳染病</strong>｜DDH/脊柱側彎/DMD、UTI/腎病症候群/AGN/隱睪/尿道下裂、傳染病隔離與表徵、疫苗接種時程、腸病毒</div>
+        </div>
+        <div class="day-row">
+          <div class="day-label">Day 26</div>
+          <div class="day-content"><strong>全科模擬測驗（一）</strong>｜完成2屆完整考古題（100題），嚴格計時、模擬考試情境，檢討後整理錯題本</div>
+        </div>
+        <div class="day-row">
+          <div class="day-label">Day 27</div>
+          <div class="day-content"><strong>弱點加強複習</strong>｜根據模擬測驗結果，針對錯誤率高的主題重新精讀，特別加強容易混淆的鑑別比較題型</div>
+        </div>
+        <div class="day-row">
+          <div class="day-label">Day 28</div>
+          <div class="day-content"><strong>最終複習 + 考前整理</strong>｜快速瀏覽全部筆記與比較表、再做1屆最新考古題、確認高頻考點全部掌握、早睡養精蓄銳</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <strong>讀書計畫使用建議：</strong>
+      (1) 每日讀書前先花5分鐘回想昨日重點；
+      (2) 善用「比較表」整理相似疾病的鑑別要點；
+      (3) 考古題不只做對答案，更要理解每個選項為何對或錯；
+      (4) 錯題標記分類，考前一天集中複習所有錯題；
+      (5) 產科與兒科交替讀，避免長時間讀同一領域造成疲勞。
+    </div>
+  </section>
+
+  <!-- 學習資源 -->
+  <section id="resources">
+    <h2 class="section-title">推薦學習資源</h2>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">教科書與參考書</div>
+        <ul class="checklist">
+          <li><strong>產科護理學</strong>：余玉眉等著《實用產科護理學》最新版</li>
+          <li><strong>兒科護理學</strong>：陳月枝等著《實用兒科護理學》最新版</li>
+          <li><strong>國考用書</strong>：歷屆考題詳解（建議至少做近6屆）</li>
+          <li><strong>圖表整理</strong>：以主題為單位製作自己的比較表</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">複習策略工具</div>
+        <ul class="checklist">
+          <li><strong>考古題庫</strong>：考選部歷屆試題下載（免費）</li>
+          <li><strong>間隔複習</strong>：使用Anki等間隔重複軟體記憶數值型考點</li>
+          <li><strong>錯題本</strong>：將每次練習的錯題分類整理，考前集中複習</li>
+          <li><strong>比較表法</strong>：將常混淆的疾病做成對照表（如前置胎盤vs剝離）</li>
+          <li><strong>口訣記憶</strong>：善用口訣記憶複雜內容（如Apgar五項、4T產後出血原因）</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p style="margin-bottom:6px;">本報告資料來源為111年第一次至115年第一次護理師國家考試「產兒科護理學」考題分析</p>
+    <p style="margin-bottom:6px;">報告產生日期：2026年7月</p>
+    <p>&copy; 2026 版權所有，僅供個人備考使用，未經同意請勿轉載或公開散布</p>
+  </div>
+
+</div>
+
+<script>
+// Smooth scroll for sidebar links
+document.querySelectorAll('.sidebar nav a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      e.preventDefault();
+      const target = document.getElementById(href.substring(1));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      // Update active state
+      document.querySelectorAll('.sidebar nav a').forEach(a => a.classList.remove('active'));
+      this.classList.add('active');
+    }
+  });
+});
+
+// Highlight active section on scroll
+window.addEventListener('scroll', function() {
+  const sections = document.querySelectorAll('section[id], .hero[id]');
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if (window.scrollY >= sectionTop) {
+      current = section.getAttribute('id');
+    }
+  });
+  document.querySelectorAll('.sidebar nav a').forEach(a => {
+    a.classList.remove('active');
+    if (a.getAttribute('href') === '#' + current) {
+      a.classList.add('active');
+    }
+  });
+});
+</script>
